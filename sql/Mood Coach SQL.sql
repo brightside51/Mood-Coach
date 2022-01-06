@@ -53,10 +53,6 @@ CREATE TABLE User (
     email TEXT NOT NULL UNIQUE
 );
 
--- There is one other way to create super and subclasses that ensures that the same
--- user cannot be both, by using a 'persist' function and numbers for each subclass
--- https://www.sqlteam.com/articles/implementing-table-inheritance-in-sql-server
-
 -- Health Professional SubClass
 CREATE TABLE HealthProfessional (
 
@@ -67,11 +63,8 @@ CREATE TABLE HealthProfessional (
     workplace_id INTEGER NOT NULL,          -- For the Professional to be active, they must be assigned to a Workplace
     patients_assigned INTEGER NOT NULL default 0 CHECK(patients_assigned >= 0 AND patients_assigned <= 5)
     -- The number of patients assigned to a Health Professional must never exceed 5 (or be negative for that matter)
+    -- 
 );
-
-    -- !!!!! How are we supposed to complete the number of patients assigned automatically, or may we just fill
-    -- !!!!! in this number using HTML/Java and default it as 0, as we've done here? Or can we update this TABLE
-    -- !!!!! using the COUNT and WHERE functions for this (https://www.w3schools.com/sql/sql_count_avg_sum.asp)
 
 -- Patient Subclass
 CREATE TABLE Patient (
@@ -97,7 +90,7 @@ CREATE TABLE Test (
     -- Test ID Primary Key
     test_id INTEGER PRIMARY KEY AUTOINCREMENT,
 
-    date_ TEXT NOT NULL UNIQUE,             -- Date in TEXT form will correspond to YYYY-MM-DD (only 1 Test a day)
+    date_ TEXT NOT NULL,                    -- Date in TEXT form will correspond to YYYY-MM-DD (only 1 Test a day)
     paper_doi TEXT NOT NULL,                -- Different tests can refer to the same Paper
 
     -- Foreign Key referring to HealthProfessional and Patient (1 to Many)
@@ -106,6 +99,8 @@ CREATE TABLE Test (
     FOREIGN KEY (health_professional) references HealthProfessional(cc_number) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (patient) references Patient(cc_number) ON DELETE CASCADE ON UPDATE CASCADE
     -- If the Patient or Health Professional are deleted, then this foreign key will automatically be deleted as well
+
+    (patient, date_) UNIQUE,
 );
 
 
@@ -191,6 +186,9 @@ CREATE TABLE Organization (
 ----------------
 -- DATA INPUT --
 ----------------
+
+
+
 
 /*
 -- Relevant Functionalities
