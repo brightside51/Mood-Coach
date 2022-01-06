@@ -1,6 +1,8 @@
-# ESIN-Project-21-22
+# Mood Coach
 
-**Group**:
+**UC**: *ESIN* 2021/22
+
+**Group G**:
 - Pedro Sousa (up201806246)
 - Ana Marta Dias (up201806879)
 - Joana Martins (up20180)
