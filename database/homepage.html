@@ -1,10 +1,10 @@
-<!-- Login Form Page -->
-<!-- http://localhost:8080/moodcoach/database/homepage.php -->
+<!-- Home Page -->
+<!-- http://localhost:8080/moodcoach/database/homepage.html -->
 
 <!DOCTYPE html>
 <html lang = "en" dir = "ltr">
 
-    <!-- Page Head -->
+    <!-- Page Information and Style -->
     <head>
         <meta charset = "utf-8">
         <title>HomePage</title>
@@ -16,109 +16,47 @@
         <style>
 
             /* Borders Applied to All */
-            *
-            {
-                box-sizing: border-box;
-            }
+            *{box-sizing: border-box;}
 
             /* Body Style */
-            body
-            {
-                font-family: Arial, Helvetica, sans-serif;
-                margin: 0;
-            }
+            body{font-family: Arial, Helvetica, sans-serif; margin: 0;}
 
             /* Page Header/Title + Logo Class */
             .header
-            {
-                width: 100%; height: 300px;
+            {   width: 100%; height: 300px; padding: 50px;
                 align-items: center; justify-content: center;
-                padding: 50px;
-                text-align: center;
-                background: #008080;
-                color: white;
-            }
+                text-align: center; color: white;
+                background: #008080;}
+            .header h1{font-size: 40px;}
 
-            /* Heading Font Size */
-            .header h1
-            {
-                font-size: 40px;
-            }
-
-            /* Top Navigation Bar Style */
-            .navbar
-            {
-                overflow: hidden;
-                background-color: #333;
-            }
-
-            /* Top Navigation Bar Default (Right) Link Style */
+            /* Top Navigation Bar Class + Links*/
+            .navbar{overflow: hidden; background-color: #333;}
             .navbar a
-            {
-                float: right;
-                display: block;
-                color: white;
-                text-decoration: none;
-                text-align: center;
-                padding: 14px 20px;
-            }
-
-            /* Top Navigation Bar Left Link Style */
-            .navbar a.left
-            {
-                float: left;
-            }
-
-            /* Top Navigation Bar Links - Changing Color on Hover */
-            .navbar a.hover
-            {
-                background-color: #ddd;
-                color: black;
-            }
+            {   float: right; text-align: center;
+                display: block; padding: 14px 20px;
+                color: white; text-decoration: none;}
+            .navbar a.left{float: left;}
+            .navbar a.hover{background-color: #ddd; color: white;}
 
             /* Homepage Contents */
             .main
-            {
-                display: flex;
-                flex-direction: column;
-                overflow: auto;
-                padding: 0 0 55px;
-            }
+            {   display: flex; flex-direction: column;
+                overflow: auto; padding: 0 0 55px;
+                background-color: #ddd;}
 
             /* Footnotes/Footer */
             .footnote
-            {
-                position: fixed;
-                bottom: 0;
-                width: 100%;
-                height: 45px;
-                padding: 0px;
-                overflow: hidden;
-                background-color: #ddd;
-            }
+            {   position: fixed; bottom: 0;
+                width: 100%; height: 45px; padding: 0px;
+                overflow: hidden; background-color: #333;}
             .footnote h2
-            {
-                font-size: 20px;
-                float: right;
-                display: block;
-                color: white;
-                text-align: center;
-                padding: 0px 20px;
-            }
-            .footnote h2.left
-            {
-                float: left;
-            }
+            {   font-size: 20px; color: white; text-align: center;
+                float: right; display: block; padding: 0px 20px;}
+            .footnote h2.left{float: left;}
 
             /* Adaptative Layout for Smaller Screen ()*/
             @media screen and (max-width:400px)
-            {
-                .navbar a
-                {
-                    float: none;
-                    width: 100%;
-                }
-            }
+            {.navbar a{float: none;width: 100%;}}
             
         </style>
     </head>
@@ -136,9 +74,9 @@
         
         <!-- Navigation Bar -->
         <div class = "navbar">
-            <a href = "test.html">Login</a>
+            <a href = "login.php">Login</a>
             <a href = "#">Register</a>
-            <a href = "#" class = "left">Idk</a>
+            <a href = "#" class = "left">Homepage</a>
         </div>
         
         <!-- About Us Section -->
@@ -153,7 +91,6 @@
         </div>
 
         <!-- Footnotes -->
-        <div style="clear:both;"></div>
         <div class = "footnote">
             <h2 class = "left">ESIN</h2>
             <h2>2021/22</h2>
