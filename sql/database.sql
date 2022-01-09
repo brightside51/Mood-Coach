@@ -8,20 +8,37 @@
 --          Joana Martins (up201806234)
 --          Pedro Sousa (up208106246)
 
-----------------------------------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------
+
+-- Dropping all Tables
+PRAGMA foreign_keys = OFF;
+DROP TABLE IF EXISTS Feedback;
+DROP TABLE IF EXISTS Post;
+DROP TABLE IF EXISTS Comment;
+DROP TABLE IF EXISTS Organization;
+DROP TABLE IF EXISTS HealthProfessional;
+DROP TABLE IF EXISTS Question;
+DROP TABLE IF EXISTS User;
+DROP TABLE IF EXISTS Patient;
+DROP TABLE IF EXISTS Test;
+
+-------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------
 
 -----------
 -- SETUP --
 -----------
 
 PRAGMA foreign_keys = ON;
+PRAGMA defer_foreign_keys = true;
 .mode columns
 .headers ON
 
 /*
+'cd sql' to access the sql folder
 '.\sqlite3.exe moodCoach.db' will save our script into a Database (.db file)
-'.read "Mood Coach SQL.sql"' will read the script, finally creating a file and allowing us to debug
+'.read "sql_database.sql"' will read the script, finally creating a file and allowing us to debug
 '.tables' will check for all existing Tables
 */
 
@@ -31,15 +48,6 @@ PRAGMA foreign_keys = ON;
 --------------------
 -- CLASS CREATION --
 --------------------
-
--- Dropping all Tables
-DROP TABLE IF EXISTS Test;
-DROP TABLE IF EXISTS Question;
-DROP TABLE IF EXISTS User;
-DROP TABLE IF EXISTS HealthProfessional;
-DROP TABLE IF EXISTS Patient;
-
--------------------------------------------------------------------------------------------------------------------------------
 
 -- User SuperClass
 CREATE TABLE User (
@@ -63,7 +71,6 @@ CREATE TABLE HealthProfessional (
     workplace_id INTEGER NOT NULL,          -- For the Professional to be active, they must be assigned to a Workplace
     patients_assigned INTEGER NOT NULL default 0 CHECK(patients_assigned >= 0 AND patients_assigned <= 5)
     -- The number of patients assigned to a Health Professional must never exceed 5 (or be negative for that matter)
-    -- 
 );
 
 -- Patient Subclass
@@ -97,10 +104,10 @@ CREATE TABLE Test (
     health_professional INTEGER UNIQUE NOT NULL,    -- A Test will only exist if 1 and 1 Doctor only is responsible for it
     patient INTEGER,                                -- 0 or more patients can take the Test
     FOREIGN KEY (health_professional) references HealthProfessional(cc_number) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (patient) references Patient(cc_number) ON DELETE CASCADE ON UPDATE CASCADE
+    FOREIGN KEY (patient) references Patient(cc_number) ON DELETE CASCADE ON UPDATE CASCADE,
     -- If the Patient or Health Professional are deleted, then this foreign key will automatically be deleted as well
 
-    (patient, date_) UNIQUE,
+    UNIQUE(patient, date_)
 );
 
 
@@ -126,7 +133,7 @@ CREATE TABLE Feedback (
     -- Test ID Primary Key
     test_id INTEGER PRIMARY KEY references Test(test_id),
 
-    diagnosis TEXT NOT NULL CHECK(diagnosis = "Bipolarity" OR diagnosis = "Depression" OR diagnosis = "Anxiety" OR diagnosis = "None")
+    diagnosis TEXT NOT NULL CHECK(diagnosis = "Bipolarity" OR diagnosis = "Depression" OR diagnosis = "Anxiety" OR diagnosis = "None"),
     prescription TEXT,
     advice TEXT,
 
@@ -134,7 +141,7 @@ CREATE TABLE Feedback (
     patient INTEGER NOT NULL,       -- More than 1 Patient can go through the same Test
     FOREIGN KEY (patient) references Patient(cc_number) ON DELETE CASCADE ON UPDATE CASCADE
     -- If the Patient is deleted, then this foreign key will automatically be deleted as well
-)
+);
 
 -------------------------------------------------------------------------------------------------------------------------------
 
@@ -150,7 +157,7 @@ CREATE TABLE Post (
     user INTEGER NOT NULL,          -- Any type of User can create a Post
     FOREIGN KEY (user) references User(cc_number) ON DELETE CASCADE ON UPDATE CASCADE
     -- If the User is deleted, then this foreign key will automatically be deleted as well
-)
+);
 
 CREATE TABLE Comment (
     
@@ -165,7 +172,7 @@ CREATE TABLE Comment (
     FOREIGN KEY (user) references User(cc_number) ON DELETE CASCADE ON UPDATE CASCADE
     FOREIGN KEY (post_id) references Post(post_id) ON DELETE CASCADE ON UPDATE CASCADE
     -- If the User or Post are deleted, then this foreign key will automatically be deleted as well
-)
+);
 
 -------------------------------------------------------------------------------------------------------------------------------
 
@@ -178,7 +185,7 @@ CREATE TABLE Organization (
     contact_email TEXT UNIQUE NOT NULL,         -- The Organization's contact email must be unique
     support_line INTEGER UNIQUE CHECK(support_line > 253000000),
     aid_project TEXT                            -- The Organization's support line must be unique and a phone number
-)
+);
 
 -------------------------------------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------------------------------

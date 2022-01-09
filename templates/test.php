@@ -8,6 +8,23 @@
     <body>
         <form action = "database\test.php" method = "post" id = "test">
             <ol>
+                <?php
+                // Fetch $questions and $answers from database
+                foreach ($questions as $question) { ?>
+                <li>
+                    <h3><?php echo $question ?></h3>
+                    <div>
+                        <?php foreach($answers as $answer) {?>
+                        <input type = "radio"
+                            name = "test_answers"
+                            value = "<?php $answer ?>"><?php echo $answer ?>
+                        <?php } ?>
+                    </div>
+                </li>
+                <?php } ?>
+
+                <?php
+                /*
                 <li>
                     <h3>Question 1</h3>
                     <div>
@@ -29,9 +46,19 @@
                         <input type = "radio" name = "q2-answers" value = "Strongly Agree">Strongly Agree
                     </div>
                 </li>
+                */?>
+
             </ol>
 
             <input type = "submit" value = "Send">
         </form>
+
+        <?php
+        foreach($answers as $answer)
+        {
+            $given_answers = $_POST['test_answers'];
+        }
+        ?>
+
     </body>
 </html>
