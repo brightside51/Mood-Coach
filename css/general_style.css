@@ -1,0 +1,31 @@
+
+/* Borders Applied to All */
+*{box-sizing: border-box;}
+
+/* Body Style */
+body{font-family: Arial, Helvetica, sans-serif; margin: 0;}
+
+/* Top Navigation Bar Class + Links*/
+.navbar{overflow: hidden; background-color: #333;}
+.navbar a
+{   float: right; text-align: center;
+    display: block; padding: 14px 20px;
+    font: normal 20px 'Bitter', serif;
+    color: white; text-decoration: none;}
+.navbar a.left{float: left;}
+.navbar a.hover{background-color: #ddd; color: white;}
+
+/* Footnotes/Footer */
+.footnote
+{   position: fixed; bottom: 0;
+    width: 100%; height: 50px; padding: 0px;
+    overflow: hidden; background-color: #333;}
+.footnote h2
+{   font: normal 20px 'Bitter', serif; color: white; text-align: center;
+    float: right; display: block;
+    padding: 14px 20px; padding-top: 0px;}
+.footnote h2.left{float: left;}
+
+/* Adaptative Layout for Smaller Screen ()*/
+@media screen and (max-width:400px)
+{.navbar a{float: none;width: 100%;}}
