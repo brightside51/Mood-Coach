@@ -2,6 +2,9 @@
     <ol>
         <?php
         // Fetch $questions and $answers from database
+        $questions = getQuestions($test_id);
+        $answers = getPossibleAnswers();
+
         foreach ($questions as $question) { ?>
             <li>
                 <h3><?php echo $question ?></h3>
@@ -14,6 +17,14 @@
                 </div>
             </li>
             <?php } ?>
+    </ol>
+
+    <input type = "submit" value = "Send">
+</form>
+
+<?php
+postGivenAnswers($questions, $given_answers, $test_count);
+?>
 
                 <?php
                 /*
@@ -42,15 +53,3 @@
                     </div>
                 </li>
                 */?>
-
-    </ol>
-
-    <input type = "submit" value = "Send">
-</form>
-
-<?php
-foreach($answers as $answer)
-{
-    $given_answers = $_POST['test_answers'];
-}
-?>

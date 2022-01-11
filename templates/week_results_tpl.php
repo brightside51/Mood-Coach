@@ -2,6 +2,7 @@
     <?php
 
     // GET VARIABLES FROM SESSION
+    // sacar username do paciente e date em que o login é efetuado
 
     global $dbh;
     $dbh = new PDO('sqlite:./sql/database.db');
