@@ -28,7 +28,7 @@
         <!-- Navigation Bar -->
         <div class = "navbar">
             <a href = "sign_in.php">Login</a>
-            <a href = "homepage.html" class = "left">Homepage</a>
+            <a href = "homepage.php" class = "left">Homepage</a>
         </div>
 
         <!---------------------------------------------------->
@@ -87,40 +87,17 @@
 
                 <!---------------------------------------------------->
 
-                <!-- Login Information Section -->
+                <!-- Login Information Section using Template -->
                 <div class="section"><span>3</span>Login Information</div>
-                <div class="inner-wrap">
-
-                    <!-- CC Number Input -->
-                    <label for = "cc_number">Citizen's Card Number
-                    <input type = "number" id = "cc_number" name = "cc_number"
-                    min = "10000000" max = "99999999" required/></label>
-
-                    <!-- Password Input -->
-                    <label for = "password">Password
-                    <input type = "password" id = "password" name = "password" required></input></label>
-                </div>
-
-                <!---------------------------------------------------->
-
-                <!-- Submit Button -->
-                <div class="button-section">
-                    <a href = "homepage.html"><input type="submit" name="submit"></a>
-                    <span class="privacy-policy">
-                    <input type="checkbox" name="tos">You agree to our <a href = tos.html>Terms of Service</a>. 
-                    </span>
-                </div>
+                <?php include('../templates/login_tpl.php') ?>
 
             </form>
         </div>
 
         <!---------------------------------------------------->
 
-        <!-- Footnotes -->
-        <div class = "footnote">
-            <h2 class = "left">ESIN</h2>
-            <h2>2021/22</h2>
-        </div>
+        <!-- Footnotes/Footer -->
+        <?php include('../templates/footer_tpl.php')?>
 
     </body>
 </html>
