@@ -1,10 +1,7 @@
 <!-- Registration Form Page -->
 <!-- http://localhost:8080/moodcoach/database/registration.php -->
 
-<!-- SQLite Database Access -->
-<?php
-    $dbh = new PDO('sqlite:../sql/database.db');
-?>
+
 
 <!DOCTYPE html>
 <html lang = "en" dir = "ltr">
@@ -41,7 +38,7 @@
 
             <!-- Form Title & Subtitle -->
             <h1>Sign Up<span>Register now for World-Class Medical Follow-Ups and Feedback</span></h1>
-            <form method = "post" action = "">
+            <form method = "post" action = "register.php">
 
                 <!-- Personal Information Section -->
                 <div class="section"><span>1</span>Personal Information</div>
@@ -100,45 +97,19 @@
                     min = "10000000" max = "99999999" required/></label>
 
                     <!-- Password Input -->
-                    <label for = "pwd">Password
-                    <input type = "password" id = "pwd" name = "password" required></input></label>
+                    <label for = "password">Password
+                    <input type = "password" id = "password" name = "password" required></input></label>
                 </div>
 
                 <!---------------------------------------------------->
 
                 <!-- Submit Button -->
                 <div class="button-section">
-                    <input type="submit" name="submit" />
+                    <a href = "homepage.html"><input type="submit" name="submit"></a>
                     <span class="privacy-policy">
                     <input type="checkbox" name="tos">You agree to our <a href = tos.html>Terms of Service</a>. 
                     </span>
                 </div>
-
-                <!---------------------------------------------------->
-
-                <!-- PHP: HTML to SQL Interface -->
-                <?php
-                
-                    /* Input Obtainal */
-                    $cc_number = $_GET['cc_number'];
-                    $password = $_GET['password'];
-                    $name = $_GET['name'];
-                    $phone_number = $_GET['phone'];
-                    $email = $_GET['email'];
-                    $doctor = $_GET['doctor'];
-                    $health_number = $_GET['health_number'];
-                    $date_birth = $_GET['birthdate'];
-                    $address = $_GET['address'];
-
-                    /* Data Input into SQL Database */
-                    $stmt = $dbh->prepare('INSERT INTO User(cc_number, password_, name_, phone_number, email) VALUES (?, ?, ?, ?, ?)');
-                    $stmt->execute(array($cc_number, $password, $name, $phone_number, $email));
-                    $stmt = $dbh->prepare('INSERT INTO Patient(cc_number, doctor, health_number, date_birth, address_) VALUES (?, ?, ?, ?, ?)');
-                    $stmt->execute(array($cc_number, $doctor, $health_number, $date_birth, $address));
-                ?>
-
-                <!-- Input Printing -->
-                <!-- <h5><?php echo "User: $cc ; Password: $pwd";?></h5> -->
 
             </form>
         </div>
@@ -152,5 +123,4 @@
         </div>
 
     </body>
-
 </html>
