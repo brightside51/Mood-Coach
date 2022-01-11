@@ -40,7 +40,7 @@
             </ul>           
         </fieldset>
         <fieldset  id = "supportLines">
-            <legend>Suport Organizations</legend>
+            <legend>Support Organizations</legend>
             <ul class = >
                 <li>
                     <h4><a class="supportLinks" href="http://www.fnerdm.pt/">FNERDM</a></h4>
