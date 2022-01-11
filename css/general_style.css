@@ -5,7 +5,7 @@
 /* Body Style */
 body{font-family: Arial, Helvetica, sans-serif; margin: 0;}
 
-/* Top Navigation Bar Class + Links*/
+/* Top Navigation Bar Class*/
 .navbar{overflow: hidden; background-color: #333;}
 .navbar a
 {   float: right; text-align: center;
@@ -13,7 +13,16 @@ body{font-family: Arial, Helvetica, sans-serif; margin: 0;}
     font: normal 20px 'Bitter', serif;
     color: white; text-decoration: none;}
 .navbar a.left{float: left;}
-.navbar a.hover{background-color: #ddd; color: white;}
+.navbar a.hover{background-color: #ddd;}
+
+/* User Type Navigation Bar*/
+.usertype{width: 100%; overflow: hidden; background-color: #ccc;}
+.usertype a
+{   float: right; padding: 12px; width: 50%;
+    font: normal 15px 'Bitter', serif; text-align: center;
+    color: white; text-decoration: none;}
+.usertype a.hover{background-color: #ddd;}
+.usertype a.active{background-color: #008080;}
 
 /* Footnotes/Footer */
 .footnote
@@ -28,24 +37,13 @@ body{font-family: Arial, Helvetica, sans-serif; margin: 0;}
 
 /* Adaptative Layout for Smaller Screen ()*/
 @media screen and (max-width:400px)
-{.navbar a{float: none;width: 100%;}}
+{.navbar a{float: none;width: 100%;}; }
 
 
-fieldset{
-    display:inline-block;
-    /* padding-top: 0%; */
-    position:relative;
-    border-color: rgb(0, 128, 128);
-}
+fieldset{display:inline-block; position:relative; border-color: #008080;}
 
-#supportLines{
-    position: relative;
-    align-self: flex-start;    
-    left: 200px;
-    top: 0px;
-} 
+#supportLines
+{   position: relative; align-self: flex-start;    
+    left: 200px; top: 0px;} 
 
-
-.supportLinks{
-    color:rgb(0, 128, 128)
-}
+.supportLinks{color: #008080;}

@@ -2,7 +2,7 @@
 <html lang = "EN-US">
     <head>
         <meta charset = "UTF-8">
-        <title>Mood Coach | HomePage Header Template</title>
+        <title>Mood Coach | Homepage Header Template</title>
 
         <!-- CSS Styling -->
         <link rel = "stylesheet" type = "text/css" href = "../css/general_style.css">
@@ -21,8 +21,8 @@
         
         <!-- Navigation Bar -->
         <div class = "navbar">
-            <a href = "sign_in.php">Login</a>
-            <a href = "sign_up.php">Register</a>
+            <a href = "signIn.php">Login</a>
+            <a href = "patientSignUp.php">Register</a>
             <a href = "#" class = "left">Homepage</a>
         </div>
 

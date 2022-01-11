@@ -58,9 +58,7 @@ CREATE TABLE User (
     password_ TEXT NOT NULL,                -- A password needn't be unique, nor does a name
     name_ TEXT NOT NULL,
     phone_number INTEGER NOT NULL UNIQUE,   -- However, a phone number and an email must
-    email TEXT NOT NULL UNIQUE,
-    usertype INTEGER NOT NULL CHECK(usertype = 0 OR usertype = 1)
-    -- User Type: 0 for Patient and 1 for HealthProfessional
+    email TEXT NOT NULL UNIQUE
 );
 
 -- Health Professional SubClass
@@ -197,11 +195,11 @@ CREATE TABLE Organization (
 ----------------
 
 -- HardCoded Admin Data
-INSERT INTO User (cc_number, password_, name_, phone_number, email, usertype) VALUES (12345678,  "greghouse", "Gregory House", 911223344, "house_greg@gmail.com", 1);
-INSERT INTO HealthProfessional (cc_number, license_id, workplace_id, patients_assigned) VALUES (12345678, 12345678, 1, 3);
+INSERT INTO User (cc_number, password_, name_, phone_number, email) VALUES (12345678,  "greghouse", "Gregory House", 911223344, "house_greg@gmail.com");
+INSERT INTO HealthProfessional (cc_number, license_id, workplace_id, patients_assigned) VALUES (12345678, 12345678, 0, 3);
 
-INSERT INTO User (cc_number, password_, name_, phone_number, email, usertype) VALUES (15325711, "brightside51", "admin", 935071209, "up201806246@fe.up.pt", 1);
-INSERT INTO HealthProfessional (cc_number, license_id, workplace_id, patients_assigned) VALUES (15325711, 15325711, 0, 1);
+INSERT INTO User (cc_number, password_, name_, phone_number, email) VALUES (15325711, "brightside51", "admin", 935071209, "up201806246@fe.up.pt");
+INSERT INTO Patient (cc_number, health_number, date_birth, address_, doctor) VALUES (15325711, 15325711, "2000-10-25", "Rua das Amoras", 12345678);
 -- INSERT INTO User (cc_number, password_, name_, phone_number, email) VALUES (11000000, "japmartins", "admin", 916237581, "up208106246@fe.up.pt");
 -- INSERT INTO User (cc_number, password_, name_, phone_number, email) VALUES (10000000, "amartadias", "admin", 929187541, "up201806879@fe.up.pt");
 

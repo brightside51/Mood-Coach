@@ -1,7 +1,5 @@
 <!-- Registration Form Page -->
-<!-- http://localhost:8080/moodcoach/database/registration.php -->
-
-
+<!-- http://localhost:8080/moodcoach/database/patientSignUp.php -->
 
 <!DOCTYPE html>
 <html lang = "en" dir = "ltr">
@@ -9,14 +7,9 @@
     <!-- Page Information and Style -->
     <head>
         <meta charset = "utf-8">
-        <title>Mood Coach | Sign Up</title>
+        <title>Mood Coach | Patient Registration</title>
         <meta name = "viewport"
         content = "width=device-width, initial-scale=1">
-        
-        <!-- CSS Styling -->
-        <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
-        <link rel = "stylesheet" type = "text/css" href = "../css/general_style.css">
-        <link rel = "stylesheet" type = "text/css" href = "../css/form_style.css">
 
     </head>
 
@@ -27,7 +20,7 @@
 
         <!-- Navigation Bar -->
         <div class = "navbar">
-            <a href = "sign_in.php">Login</a>
+            <a href = "signIn.php">Login</a>
             <a href = "homepage.php" class = "left">Homepage</a>
         </div>
 
@@ -38,7 +31,7 @@
 
             <!-- Form Title & Subtitle -->
             <h1>Sign Up<span>Register now for World-Class Medical Follow-Ups and Feedback</span></h1>
-            <form method = "post" action = "action_register.php">
+            <form method = "post" action = "action_patientRegister.php">
 
                 <!-- Personal Information Section -->
                 <div class="section"><span>1</span>Personal Information</div>

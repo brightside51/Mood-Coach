@@ -25,7 +25,7 @@
 
         <!-- Navigation Bar -->
         <div class = "navbar">
-            <a href = "sign_up.php">Register</a>
+            <a href = "patientSignUp.php">Register</a>
             <a href = "homepage.php" class = "left">Homepage</a>
         </div>
 
@@ -35,7 +35,7 @@
             <!-- Form Title & Subtitle -->
             <h1>Sign In</h1>
 
-            <form method = "post" action = "login.php">
+            <form method = "post" action = "homepage.php">
 
                 <!-- Login Form Template -->
                 <?php include('../templates/login_tpl.php') ?>

@@ -12,8 +12,6 @@
         content = "width=device-width, initial-scale=1">
         
         <!-- CSS Styling -->
-        <link rel = "stylesheet" type = "text/css" href = "../css/general_style.css">
-        <link rel = "stylesheet" type = "text/css" href = "../css/main_style.css">
         <link rel = "stylesheet" href = "//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     
     </head>
@@ -24,7 +22,7 @@
     <body>
         
         <!--  -->
-        <?php include('../templates/hpHeader_tpl.php') ?>
+        <?php include('../templates/homepageHeader_tpl.php') ?>
         
         <!-- About Us Section -->
         <div class = "main">
