@@ -122,6 +122,8 @@ CREATE TABLE Question (
     parameter TEXT NOT NULL CHECK(parameter = "Profound Sadness" OR parameter = "Fatigue" OR parameter = "Anxiety" OR parameter = "Difficulty Concentrating" OR parameter = "Worry and Fear" OR parameter = "Mood Swings" OR parameter = "Changes in Eating / Sleeping Habits" OR parameter = "Anger and Irritability"),
     answer TEXT NOT NULL CHECK(answer = "Strongly Disagree" OR answer = "Disagree" OR answer = "Neutral" OR answer = "Agree" OR answer = "Strongly Agree"),
 
+    given_answer TEXT NOT NULL,
+
     -- Foreign Key referring to Test (Composition)
     test_id INTEGER NOT NULL references Test(test_id)
     -- Various questions can belong to the same Test. Since it is a composition, if a question is deleted, the Test won't be
