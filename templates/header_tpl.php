@@ -13,7 +13,7 @@
                 </a>
             </div>
 
-            <?php //Tarzan your business ?>
+            <?php ?>
             <div class = "Login">
 
             </div>

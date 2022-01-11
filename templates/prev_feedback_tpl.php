@@ -27,6 +27,7 @@
 
         <tbody>
             <?php
+<<<<<<< Updated upstream
             for($i = 0; $i < count($feedback); $i++)
             {?>
                 <tr>
@@ -34,6 +35,15 @@
                     <td><?php echo $feedback[$i][0] ?></td>
                     <td><?php echo $feedback[$i][1] ?></td>
                     <td><?php echo $feedback[$i][2] ?></td>
+=======
+            for($i = 1; $i <= count($feedback); $i++)
+            {?>
+                <tr>
+                    <td><?php echo $i ?></td>
+                    <td><?php echo $feedback[$i - 1][0] ?></td>
+                    <td><?php echo $feedback[$i - 1][1] ?></td>
+                    <td><?php echo $feedback[$i - 1][2] ?></td>
+>>>>>>> Stashed changes
                 </tr>
             <?php }
             ?>

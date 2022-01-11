@@ -7,7 +7,7 @@
     <!-- Page Information and Style -->
     <head>
         <meta charset = "utf-8">
-        <title>Mood Coach | Homepage</title>
+        <title>Mood Coach</title>
         <meta name = "viewport"
         content = "width=device-width, initial-scale=1">
         
