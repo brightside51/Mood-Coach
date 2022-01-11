@@ -31,7 +31,7 @@ DROP TABLE IF EXISTS Test;
 -----------
 
 PRAGMA foreign_keys = ON;
-PRAGMA defer_foreign_keys = true;
+--PRAGMA defer_foreign_keys = true;
 .mode columns
 .headers ON
 
@@ -49,7 +49,7 @@ PRAGMA defer_foreign_keys = true;
 -- CLASS CREATION --
 --------------------
 
--- User & Health Professional Classes
+-- User SuperClass
 CREATE TABLE User (
 
     -- Primary Key is always unique, hence the use of the Citizen's Card Number
@@ -58,29 +58,35 @@ CREATE TABLE User (
     password_ TEXT NOT NULL,                -- A password needn't be unique, nor does a name
     name_ TEXT NOT NULL,
     phone_number INTEGER NOT NULL UNIQUE,   -- However, a phone number and an email must
-    email TEXT NOT NULL UNIQUE,
+    email TEXT NOT NULL UNIQUE
+);
+
+-- Health Professional SubClass
+CREATE TABLE HealthProfessional (
+
+    -- Primary Key referencing User Superclass  
+    cc_number INTEGER PRIMARY KEY references User(cc_number),  
+    
+    license_id INTEGER NOT NULL UNIQUE,     -- For verification that the user is in fact an active Health Professional
+    workplace_id INTEGER NOT NULL,          -- For the Professional to be active, they must be assigned to a Workplace
+    patients_assigned INTEGER NOT NULL default 0 CHECK(patients_assigned >= 0 AND patients_assigned <= 5)
+    -- The number of patients assigned to a Health Professional must never exceed 5 (or be negative for that matter)
+);
+
+-- Patient Subclass
+CREATE TABLE Patient (
+
+    -- Primary Key referencing User Superclass  
+    cc_number INTEGER PRIMARY KEY references User(cc_number),  
+
     health_number INTEGER NOT NULL UNIQUE,
     date_birth TEXT NOT NULL,               -- Date in TEXT form will correspond to YYYY-MM-DD
     address_ TEXT NOT NULL,
 
     -- Foreign Key referring to HealthProfessional (1 to Many)
     doctor INTEGER NOT NULL,                -- Cannot be UNIQUE, since more than one patient can have the same Doctor
-    FOREIGN KEY (doctor) REFERENCES HealthProfessional(name_) ON DELETE CASCADE ON UPDATE CASCADE
+    FOREIGN KEY (doctor) REFERENCES HealthProfessional(cc_number) ON DELETE CASCADE ON UPDATE CASCADE
     -- If the HealthProfessional is deleted, then this foreign key will automatically be deleted as well
-);
-
--- Health Professional SubClass
-CREATE TABLE HealthProfessional (
-
-    -- Name Primary Key (low chance of 2 Doctors having the same exact name)
-    name_ TEXT PRIMARY KEY,
-
-    phone_number INTEGER UNIQUE,   -- A phone number and an email must be unique
-    email TEXT NOT NULL UNIQUE,
-    license_id INTEGER UNIQUE,     -- For verification that the user is in fact an active Health Professional
-    workplace_id INTEGER NOT NULL,          -- For the Professional to be active, they must be assigned to a Workplace
-    patients_assigned INTEGER NOT NULL default 0 CHECK(patients_assigned >= 0 AND patients_assigned <= 5)
-    -- The number of patients assigned to a Health Professional must never exceed 5 (or be negative for that matter)
 );
 
 -------------------------------------------------------------------------------------------------------------------------------
@@ -89,11 +95,10 @@ CREATE TABLE HealthProfessional (
 CREATE TABLE Test (
 
     -- Test ID Primary Key
-    test_id INTEGER PRIMARY KEY,
+    test_id INTEGER PRIMARY KEY AUTOINCREMENT,
 
     date_ TEXT NOT NULL,                    -- Date in TEXT form will correspond to YYYY-MM-DD (only 1 Test a day)
     paper_doi TEXT NOT NULL,                -- Different tests can refer to the same Paper
-    week INTEGER NOT NULL,
 
     -- Foreign Key referring to HealthProfessional and Patient (1 to Many)
     health_professional INTEGER UNIQUE NOT NULL,    -- A Test will only exist if 1 and 1 Doctor only is responsible for it
@@ -189,11 +194,12 @@ CREATE TABLE Organization (
 -- DATA INPUT --
 ----------------
 
--- Admin Data
-INSERT INTO HealthProfessional (name_, email, workplace_id, patients_assigned)
-VALUES ("Gregory House", "house_greg@gmail.com", 0, 3);
+-- HardCoded Admin Data
+INSERT INTO User (cc_number, password_, name_, phone_number, email) VALUES (12345678,  "greghouse", "Gregory House", 911223344, "house_greg@gmail.com");
+INSERT INTO HealthProfessional (cc_number, license_id, workplace_id, patients_assigned) VALUES (12345678, 12345678, 0, 3);
 
--- INSERT INTO User (cc_number, password_, name_, phone_number, email) VALUES (10000000, "amartadias", "admin", 929187541, "up201806879@fe.up.pt");
+INSERT INTO User (cc_number, password_, name_, phone_number, email) VALUES (15325711, "brightside51", "admin", 935071209, "up201806246@fe.up.pt");
+INSERT INTO Patient (cc_number, health_number, date_birth, address_, doctor) VALUES (15325711, 15325711, "2000-10-25", "Rua das Amoras", 12345678);
 -- INSERT INTO User (cc_number, password_, name_, phone_number, email) VALUES (11000000, "japmartins", "admin", 916237581, "up208106246@fe.up.pt");
-INSERT INTO User (cc_number, password_, name_, phone_number, email, health_number, date_birth, address_, doctor)
-VALUES (15325711, "brightside51", "admin", 935071209, "up201806246@fe.up.pt", "15325711", "2020-10-25", "Rua das Amoras", "Gregory House");
+-- INSERT INTO User (cc_number, password_, name_, phone_number, email) VALUES (10000000, "amartadias", "admin", 929187541, "up201806879@fe.up.pt");
+

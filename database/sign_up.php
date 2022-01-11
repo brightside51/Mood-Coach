@@ -38,7 +38,7 @@
 
             <!-- Form Title & Subtitle -->
             <h1>Sign Up<span>Register now for World-Class Medical Follow-Ups and Feedback</span></h1>
-            <form method = "post" action = "register.php">
+            <form method = "post" action = "action_register.php">
 
                 <!-- Personal Information Section -->
                 <div class="section"><span>1</span>Personal Information</div>
