@@ -95,10 +95,11 @@ CREATE TABLE Patient (
 CREATE TABLE Test (
 
     -- Test ID Primary Key
-    test_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    test_id INTEGER PRIMARY KEY,
 
     date_ TEXT NOT NULL,                    -- Date in TEXT form will correspond to YYYY-MM-DD (only 1 Test a day)
     paper_doi TEXT NOT NULL,                -- Different tests can refer to the same Paper
+    week INTEGER NOT NULL,
 
     -- Foreign Key referring to HealthProfessional and Patient (1 to Many)
     health_professional INTEGER UNIQUE NOT NULL,    -- A Test will only exist if 1 and 1 Doctor only is responsible for it

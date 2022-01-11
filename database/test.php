@@ -13,13 +13,12 @@
   {
       global $dbh;
       $cc_number = $username;
-      $stmt = $dbh->prepare('SELECT MAX(date_) FROM Test WHERE Test.patient = $cc_number');
+      $stmt = $dbh->prepare('SELECT MAX(week) FROM Test WHERE Test.patient = $cc_number');
       $stmt->execute();
-      $lastTestDate = $stmt->fetch();
+      $week = $stmt->fetch();
 
-      $test_id = $cc_number . ($loginDate - $lastTestDate);
-      // ver melhor o operador a usar
-      // OU meter um contador cada vez que se submete um teste?
+      $test_id = $cc_number . "_" . $week . "_" . $loginDate;
+      
       return $test_id;
   }
 
@@ -37,17 +36,21 @@
   // Post test answers into the database
   function postAnswers($test_id)
   {
-
+      $count = 0;
+      $count = $count + 1; 
+      // Cada vez que se submetem testes contabilizar, dar reset após ser dado um feedback
   }
 
   // Generate feedback according to the answers
-  function getFeedback($test_id, $answers)
+  function getFeedback($test_id)
   {
       // Feedback won't be posted from the health professional!
       global $dbh;
       $stmt = $dbh->prepare('SELECT diagnosis, prescription, advice FROM Feedback WHERE $test_id = Feedback.test_id');
       $stmt->execute();
-
+    
+      //$week = $week + 1;
+      // só é dado um feedback se, pelo menos, 5 testes tiverem sido submetidos
   }
 
   // Call functions and throw exception if necessary

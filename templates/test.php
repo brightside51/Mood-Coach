@@ -1,30 +1,25 @@
-<!DOCTYPE html>
-<html lang = "EN-US">
-    <head>
-        <meta charset = "UTF-8">
-        <title>Test</title>
-    </head>
-
-    <body>
-        <form action = "database\test.php" method = "post" id = "test">
-            <ol>
-                <?php
-                // Fetch $questions and $answers from database
-                foreach ($questions as $question) { ?>
-                <li>
-                    <h3><?php echo $question ?></h3>
-                    <div>
-                        <?php foreach($answers as $answer) {?>
+<form action = "database\test.php" method = "post" id = "test">
+    <ol>
+        <?php
+        // Fetch $questions and $answers from database
+        foreach ($questions as $question) { ?>
+            <li>
+                <h3><?php echo $question ?></h3>
+                <div>
+                    <?php foreach($answers as $answer) {?>
                         <input type = "radio"
                             name = "test_answers"
                             value = "<?php $answer ?>"><?php echo $answer ?>
-                        <?php } ?>
-                    </div>
-                </li>
-                <?php } ?>
+                    <?php } ?>
+                </div>
+            </li>
+            <?php } ?>
 
                 <?php
                 /*
+                CHECK
+                https://webdevtrick.com/simple-quiz-in-php-source-code/
+
                 <li>
                     <h3>Question 1</h3>
                     <div>
@@ -48,17 +43,14 @@
                 </li>
                 */?>
 
-            </ol>
+    </ol>
 
-            <input type = "submit" value = "Send">
-        </form>
+    <input type = "submit" value = "Send">
+</form>
 
-        <?php
-        foreach($answers as $answer)
-        {
-            $given_answers = $_POST['test_answers'];
-        }
-        ?>
-
-    </body>
-</html>
+<?php
+foreach($answers as $answer)
+{
+    $given_answers = $_POST['test_answers'];
+}
+?>
