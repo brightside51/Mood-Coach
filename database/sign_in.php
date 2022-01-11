@@ -1,10 +1,5 @@
 <!-- Login Form Page -->
-<!-- http://localhost:8080/moodcoach/database/login.php -->
-
-<!-- SQLite Database Access -->
-<?php
-    $dbh = new PDO('sqlite:../sql/database.db');
-?>
+<!-- http://localhost:8080/moodcoach/database/sign_in.php -->
 
 <!DOCTYPE html>
 <html lang = "en" dir = "ltr">
@@ -40,30 +35,26 @@
             <!-- Form Title & Subtitle -->
             <h1>Sign In</h1>
 
-            <form method = "post" action = "">
+            <form method = "post" action = "login.php">
 
                 <!-- Input Areas -->
                 <div class="inner-wrap">
 
                     <!-- CC Number Input -->
-                    <label for = "cc_number">Citizen's Card Number
+                    <label for = "cc_number">Citizen's Card Number (CC)
                     <input type = "number" id = "cc_number" name = "cc_number"
                     min = "10000000" max = "99999999" required/></label>
 
+                    <!---------------------------------------------------->
+
                     <!-- Password Input -->
                     <label for = "pwd">Password
-                    <input type = "password" id = "pwd" name = "password" required></input></label>
+                    <input type = "password" id = "pwd" name = "password" required></input></label>      
+
                 </div>
-
-                <!-- Input Obtainal & Checking -->
-                <?php
-                    $cc_number = $_GET['cc_number'];
-                    $password = $_GET['password'];
-                ?>
-
-                <!-- Input Printing -->
-                <!-- <h5><?php echo "User: $cc ; Password: $pwd";?></h5> -->
-
+                
+                <!---------------------------------------------------->
+                
                 <!-- Submit Button -->
                 <div class="button-section">
                     <input type="submit" name="submit" />
@@ -71,7 +62,7 @@
                     <input type="checkbox" name="tos">You agree to our <a href = tos.html>Terms of Service</a>. 
                     </span>
                 </div>
-
+                
             </form>
         </div>
 
