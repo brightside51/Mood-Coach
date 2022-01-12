@@ -1,5 +1,5 @@
 <!-- Home Page -->
-<!-- http://localhost:8080/moodcoach/database/homepage.html -->
+<!-- http://localhost:8080/moodcoach/database/homepage.php -->
 
 <!DOCTYPE html>
 <html lang = "en" dir = "ltr">
@@ -7,13 +7,9 @@
     <!-- Page Information and Style -->
     <head>
         <meta charset = "utf-8">
-        <title>Mood Coach</title>
+        <title>Mood Coach | Homepage</title>
         <meta name = "viewport"
         content = "width=device-width, initial-scale=1">
-        
-        <!-- CSS Styling -->
-        <link rel = "stylesheet" href = "//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    
     </head>
 
     <!---------------------------------------------------->
@@ -21,7 +17,7 @@
     <!-- Page Body -->
     <body>
         
-        <!--  -->
+        <!-- Homepage Header Template -->
         <?php include('../templates/homepageHeader_tpl.php') ?>
         
         <!-- About Us Section -->

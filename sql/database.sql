@@ -200,10 +200,10 @@ CREATE TABLE Organization (
 
 -- HardCoded Admin Data
 INSERT INTO User (cc_number, password_, name_, phone_number, email, usertype) VALUES (12345678,  "greghouse", "Gregory House", 911223344, "house_greg@gmail.com", 1);
-INSERT INTO HealthProfessional (cc_number, license_id, workplace_id, patients_assigned) VALUES (12345678, 12345678, 1, 3);
+INSERT INTO HealthProfessional (cc_number, license_id, workplace_id, patients_assigned) VALUES (12345678, 12345678, 1, 0);
 
 INSERT INTO User (cc_number, password_, name_, phone_number, email, usertype) VALUES (15325711, "brightside51", "admin", 935071209, "up201806246@fe.up.pt", 1);
-INSERT INTO HealthProfessional (cc_number, license_id, workplace_id, patients_assigned) VALUES (15325711, 15325711, 0, 1);
+INSERT INTO HealthProfessional (cc_number, license_id, workplace_id, patients_assigned) VALUES (15325711, 15325711, 0, 0);
 -- INSERT INTO User (cc_number, password_, name_, phone_number, email) VALUES (11000000, "japmartins", "admin", 916237581, "up208106246@fe.up.pt");
 -- INSERT INTO User (cc_number, password_, name_, phone_number, email) VALUES (10000000, "amartadias", "admin", 929187541, "up201806879@fe.up.pt");
 
