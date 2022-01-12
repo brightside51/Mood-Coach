@@ -34,10 +34,6 @@
     $rowHP = $stmt->fetch(); $patients_assigned = $rowHP['patients_assigned'] + 1;
     $stmt = $dbh->prepare('UPDATE HealthProfessional SET patients_assigned = ? WHERE cc_number = ?');
     $stmt->execute(array($patients_assigned, $doctor_cc));
-    
-
-    /* [Test] Variable Input Printing */
-    /* ?><h5><?php echo "Name: $name" ?></h5><?php */
 
     /* Data Input Function into SQL Database */
     function insertPatient($cc_number, $password, $name, $phone_number, $email, $health_number, $date_birth, $address, $doctor_cc, $usertype)
@@ -49,11 +45,19 @@
     }
     
     /* Data Input into SQL Database */
-    try{    insertPatient($cc_number, $password, $name, $phone_number, $email, $health_number, $date_birth, $address, $doctor_cc, $usertype);
-            $_SESSION["msg"] = "Registration Successful!";
-    } catch(PDOException $e)
-    {echo $e;}
+    try
+    {
+        insertPatient($cc_number, $password, $name, $phone_number, $email, $health_number, $date_birth, $address, $doctor_cc, $usertype);
+        $_SESSION["welcomeMsg"] = "Welcome $name";
+        header('Location:database/patientMenu.php');        /* Redirecting the Patient to the Menu */
+    }
+    catch(PDOException $e)
+    {
 
-    /* Redirecting the User to the Menu */
-    header('Location:database/patientMenu.php');
+        // IF Clause for when User already exists
+
+        echo $e->getMessage();
+        $_SESSION['regError'] = "Failed Registration!";
+        header('Location:database/patientSignUp.php');      /* Redirecting the Patient back to Registration */
+    }
 ?>

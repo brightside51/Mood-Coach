@@ -1,3 +1,9 @@
+<?php   
+    session_start();
+    $logError = $_SESSION['logError'];
+    unset($_SESSION['logError']);
+?>
+
 <!-- Login Form Page -->
 <!-- http://localhost:8080/moodcoach/database/sign_in.php -->
 
@@ -33,9 +39,9 @@
         <div class="form-style">
 
             <!-- Form Title & Subtitle -->
-            <h1>Sign In</h1>
+            <h1>Sign In<span><?php echo $logError; ?></span></h1>
 
-            <form method = "post" action = "homepage.php">
+            <form method = "post" action = "../action_login.php">
 
                 <!-- Login Form Template -->
                 <?php include('../templates/login_tpl.php') ?>

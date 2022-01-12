@@ -18,9 +18,6 @@
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-    /* [Test] Variable Input Printing */
-    /* ?><h5><?php echo "Name: $name" ?></h5><?php */
-
     /* Data Input Function into SQL Database */
     function insertHP($cc_number, $password, $name, $phone_number, $email, $license_id, $workplace_id, $patients_assigned, $usertype)
     {   global $dbh;
@@ -31,12 +28,19 @@
     }
     
     /* Data Input into SQL Database */
-    try{    insertHP($cc_number, $password, $name, $phone_number, $email, $license_id, $workplace_id, $patients_assigned, $usertype);
-            $_SESSION["msg"] = "Registration Successful!";
-    } catch(PDOException $e)
-    {echo $e;}
+    try
+    {
+        insertPatient($cc_number, $password, $name, $phone_number, $email, $health_number, $date_birth, $address, $doctor_cc, $usertype);
+        $_SESSION["welcomeMsg"] = "Welcome Dr. $name";
+        header('Location:database/hpMenu.php');        /* Redirecting the Doctor to the Menu */
+    }
+    catch(PDOException $e)
+    {
 
-    
-    /* Redirecting the User to the Menu */
-    header('Location:database/hpMenu.php');
+        // IF Clause for when User already exists
+
+        echo $e->getMessage();
+        $_SESSION['regError'] = "Failed Registration!";
+        header('Location:database/hpSignUp.php');      /* Redirecting the Doctor back to Registration */
+    }
 ?>

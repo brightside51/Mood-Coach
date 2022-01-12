@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang = "EN-US">
     <head>
@@ -15,12 +17,7 @@
 
         <!-- Welcome Message -->
         <div class = "header">
-
-            <? php /* <?php   if($usertype == 1){$msg = "Welcome Dr.".$name ;}
-                    else{$msg = "Welcome ".$name ;}?>
-            <h5><?php echo "Name: $usertype" ?></h5> */ ?>
-
-            <!-- <h1 class = "animated fadeInUp"><?php echo $msg ?></h1> -->
+            <h1 class = "animated fadeInUp"><?php echo $_SESSION['welcomeMsg']; ?></h1>
         </div>
         
         <!-- Navigation Bar -->

@@ -38,23 +38,26 @@
     {
         $_SESSION['cc_number'] = $cc_number;
         $_SESSION['usertype'] = $row['usertype'];
-        if ($_SESSION['usertype'] == 0){header('Location: database/patientMenu.php');}
-        else{header('Location: database/hpMenu.php');}
-
-        //print_r($cc_number);
+        print_r($cc_number);
+        //if ($_SESSION['usertype'] == 0){header('Location: database/patientMenu.php');}
+        //else{header('Location: database/hpMenu.php');}
     }
+
     else            // User Not Found
     {
         // Wrong CC Number
+        print_r($cc_number); print_r($password);
+        /*
         if(findCC($cc_number))
         {
-            $_SESSION['logFail_msg'] = "Invalid CC Number: Please ";
+            $_SESSION['logError'] = "Invalid CC Number: Please ";
         }
         else
         {
 
         }
         header('Location: database/signIn.php');
+        */
         
     }
 

@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang = "en" dir = "ltr"> 
 
@@ -25,8 +27,8 @@
 
         <!-- Changing between User Type -->
         <div class = "usertype">
-            <a <?php if($usertype == 1){ ?> class = "active" <?php } ?> href = "hpSignUp.php">Health Professional</a>
-            <a <?php if($usertype == 0){ ?> class = "active" <?php } ?> href = "patientSignUp.php">Patient</a>
+            <a <?php if($_SESSION['usertype'] == 1){ ?> class = "active" <?php } ?> href = "hpSignUp.php">Health Professional</a>
+            <a <?php if($_SESSION['usertype'] == 0){ ?> class = "active" <?php } ?> href = "patientSignUp.php">Patient</a>
         </div>
         
         

@@ -1,5 +1,11 @@
-<!-- Registration Form Page -->
-<!-- http://localhost:8080/moodcoach/database/patientSignUp.php -->
+<?php   
+    session_start();
+    $regError = $_SESSION['regError'];
+    unset($_SESSION['regError']);
+?>
+
+<!-- Health Professional Registration Form Page -->
+<!-- http://localhost:8080/moodcoach/database/hpSignUp.php -->
 
 <!DOCTYPE html>
 <html lang = "en" dir = "ltr">
@@ -27,7 +33,7 @@
         <div class="form-style">
 
             <!-- Form Title & Subtitle -->
-            <h1>Sign Up<span>Register now to Contribute to all of your Patients' Health!</span></h1>
+            <h1>Sign Up<span><?php echo $_SESSION['regError'] ?></span></h1>
             <form method = "post" action = "../action_hpRegister.php">
 
                 <!-- Personal Information Section -->

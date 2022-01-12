@@ -216,10 +216,12 @@ CREATE TABLE SupportLine (
 INSERT INTO User (cc_number, password_, name_, phone_number, email, usertype) VALUES (12345678,  "d033e22ae348aeb5660fc2140aec35850c4da997", "Gregory House", 911223344, "house_greg@gmail.com", 1);
 INSERT INTO HealthProfessional (cc_number, license_id, workplace_id, patients_assigned) VALUES (12345678, 12345678, 1, 0);
 
+
 -- INSERT INTO User (cc_number, password_, name_, phone_number, email, usertype) VALUES (15325711, "brightside51", "admin", 935071209, "up201806246@fe.up.pt", 1);
 -- INSERT INTO HealthProfessional (cc_number, license_id, workplace_id, patients_assigned) VALUES (15325711, 15325711, 0, 0);
 -- INSERT INTO User (cc_number, password_, name_, phone_number, email) VALUES (11000000, "japmartins", "admin", 916237581, "up208106246@fe.up.pt");
 -- INSERT INTO User (cc_number, password_, name_, phone_number, email) VALUES (10000000, "amartadias", "admin", 929187541, "up201806879@fe.up.pt");
+
 
 INSERT INTO Organization (name_, website, contact_email, contact_tel1) VALUES ("FNERDM", "http://www.fnerdm.pt/", "geral@fnerdm.pt", 939564509);
 INSERT INTO Organization (name_, website, contact_email, contact_tel1, contact_tel2) VALUES ("ENCONTRAR+SE", "https://www.encontrarse.pt/", "geral@encontrarse.pt", 935592507, 220101417);

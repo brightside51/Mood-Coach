@@ -1,4 +1,10 @@
-<!-- Registration Form Page -->
+<?php   
+    session_start();
+    $regError = $_SESSION['regError'];
+    unset($_SESSION['regError']);
+?>
+
+<!-- Patient Registration Form Page -->
 <!-- http://localhost:8080/moodcoach/database/patientSignUp.php -->
 
 <!DOCTYPE html>
@@ -19,7 +25,7 @@
     <body>
 
         <!-- Navigation Bar + User Type Changer -->
-        <?php $usertype = 0; include('../templates/signUpHeader_tpl.php'); ?>
+        <?php include('../templates/signUpHeader_tpl.php'); ?>
 
         <!---------------------------------------------------->
 
@@ -27,7 +33,7 @@
         <div class="form-style">
 
             <!-- Form Title & Subtitle -->
-            <h1>Sign Up<span>Register now for World-Class Medical Follow-Ups and Feedback</span></h1>
+            <h1>Sign Up<span><?php echo $regError ?></span></h1>
             <form method = "post" action = "../action_patientRegister.php">
 
                 <!-- Personal Information Section -->
