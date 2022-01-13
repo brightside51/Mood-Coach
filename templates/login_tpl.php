@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    $cc_numberError = $_SESSION['cc_numberError'];
+    unset($_SESSION['cc_numberError']);
+?>
+
 <!DOCTYPE html>
 <html lang = "EN-US">
     <head>
@@ -17,7 +23,7 @@
             <!-- CC Number Input -->
             <label for = "cc_number">Citizen's Card Number
             <input type = "number" id = "cc_number" name = "cc_number"
-            min = "10000000" max = "99999999" required/></label>
+            min = "10000000" max = "99999999" value = <?php echo $cc_numberError; ?> required/></label>
 
             <!-- Password Input -->
             <label for = "password">Password

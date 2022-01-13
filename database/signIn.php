@@ -39,7 +39,9 @@
         <div class="form-style">
 
             <!-- Form Title & Subtitle -->
-            <h1>Sign In<span><?php echo $logError; ?></span></h1>
+            <h1>Sign In<span><?php echo $logError;
+                if($logError == "Invalid CC Number")
+                { ?>. Consider <a href = "patientSignUp.php">Signing Up</a>! <?php } ?></span></h1>
 
             <form method = "post" action = "../action_login.php">
 

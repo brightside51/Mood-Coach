@@ -17,7 +17,9 @@
 
         <!-- Welcome Message -->
         <div class = "header">
-            <h1 class = "animated fadeInUp"><?php echo $_SESSION['welcomeMsg']; ?></h1>
+            <h1 class = "animated fadeInUp"><?php if($_SESSION['usertype'] == 0){
+                echo "Welcome {$_SESSION['name']}";}
+                else{echo "Welcome Dr. {$_SESSION['name']}";} ?></h1>
         </div>
         
         <!-- Navigation Bar -->

@@ -12,7 +12,7 @@
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-    /* Search for CC Number inside the User Class */
+    /* Search for a User (CC Number and Password) inside the User Class */
     function findUser($cc_number, $password)
     {   global $dbh;
         $stmt = $dbh->prepare('SELECT * FROM User WHERE cc_number = ? AND password_ = ?');
@@ -21,10 +21,10 @@
         // This value will be False if no corresponding User is found
     }
 
-    /* Search for CC Number inside the Patient Subclass */
+    /* Search for CC Number inside the User Class */
     function findCC($cc_number)
     {   global $dbh;
-        $stmt = $dbh->prepare('SELECT * FROM Patient WHERE cc_number = ?');
+        $stmt = $dbh->prepare('SELECT * FROM User WHERE cc_number = ?');
         $stmt->execute(array($cc_number));
         return $stmt->fetch();
         // This value will be False if no corresponding CC Number is found
@@ -37,28 +37,36 @@
     if ($row)       // User Found
     {
         $_SESSION['cc_number'] = $cc_number;
-        $_SESSION['usertype'] = $row['usertype'];
-        print_r($cc_number);
-        //if ($_SESSION['usertype'] == 0){header('Location: database/patientMenu.php');}
-        //else{header('Location: database/hpMenu.php');}
+        $usertype = $row['usertype']; $_SESSION['usertype'] = $usertype;
+        $name = $row['name_']; $_SESSION['name'] = $name;
+        
+        // Redirecting the User to the Corresponding Menu
+        if($usertype == 0)
+        {
+            header('Location:database/patientMenu.php');
+        }
+        else
+        {
+            header('Location:database/hpMenu.php');
+        }
     }
 
     else            // User Not Found
     {
-        // Wrong CC Number
-        print_r($cc_number); print_r($password);
-        /*
+
+        // Wrong Password       
         if(findCC($cc_number))
         {
-            $_SESSION['logError'] = "Invalid CC Number: Please ";
+            $_SESSION['logError'] = "Invalid Password";
+            $_SESSION['cc_numberError'] = $cc_number;
         }
-        else
+        // Wrong CC Number
+        else        
         {
-
+            $_SESSION['logError'] = "Invalid CC Number";
         }
-        header('Location: database/signIn.php');
-        */
-        
-    }
 
+        // Redirecting the User back to Login
+        header('Location: database/signIn.php');
+    }
 ?>

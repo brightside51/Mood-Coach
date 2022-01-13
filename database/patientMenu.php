@@ -10,8 +10,7 @@
     <head>
         <meta charset = "utf-8">
         <title>Mood Coach | Patient Menu</title>
-        <meta name = "viewport"
-        content = "width=device-width, initial-scale=1">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1">
     </head>
 
     <!---------------------------------------------------->
@@ -19,7 +18,7 @@
     <!-- Page Body -->
     <body>
 
-        <h5><?php echo "Name: $_SESSION['cc_number']"; ?></h5>
+        <h5><?php echo "Name: {$_SESSION['cc_number']}"; ?></h5>
         
         <!-- In-Menu Header Template -->
         <?php include('../templates/inMenuHeader_tpl.php') ?>

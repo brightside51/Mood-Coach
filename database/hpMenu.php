@@ -19,7 +19,7 @@
     <!-- Page Body -->
     <body>
 
-        <h5><?php echo "Name: $_SESSION['cc_number']" ?></h5>
+        <h5><?php echo "Name: {$_SESSION['cc_number']}" ?></h5>
         
         <!-- In-Menu Header Template -->
         <?php include('../templates/inMenuHeader_tpl.php') ?>

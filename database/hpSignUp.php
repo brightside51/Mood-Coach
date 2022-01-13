@@ -1,5 +1,6 @@
 <?php   
     session_start();
+    $_SESSION['usertype'] = 1;
     $regError = $_SESSION['regError'];
     unset($_SESSION['regError']);
 ?>
@@ -33,7 +34,10 @@
         <div class="form-style">
 
             <!-- Form Title & Subtitle -->
-            <h1>Sign Up<span><?php echo $_SESSION['regError'] ?></span></h1>
+            <h1>Sign Up<span><?php if($regError)
+                { ?> User with <?php echo $regError ?> already exists.
+                Try <a href = "signIn.php">logging in</a>! <?php } ?></span></h1>
+
             <form method = "post" action = "../action_hpRegister.php">
 
                 <!-- Personal Information Section -->

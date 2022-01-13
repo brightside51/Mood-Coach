@@ -1,5 +1,6 @@
 <?php   
     session_start();
+    $_SESSION['usertype'] = 0;
     $regError = $_SESSION['regError'];
     unset($_SESSION['regError']);
 ?>

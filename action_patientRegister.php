@@ -12,7 +12,7 @@
     $health_number = $_POST['health_number'];
     $date_birth = $_POST['birthdate'];
     $address = $_POST['address'];
-    $usertype = 0;
+    $usertype = $_SESSION['usertype'];
 
     /* SQLite Database Access */
     $dbh = new PDO('sqlite:sql/moodCoach.db');
@@ -48,8 +48,11 @@
     try
     {
         insertPatient($cc_number, $password, $name, $phone_number, $email, $health_number, $date_birth, $address, $doctor_cc, $usertype);
-        $_SESSION["welcomeMsg"] = "Welcome $name";
-        header('Location:database/patientMenu.php');        /* Redirecting the Patient to the Menu */
+        $_SESSION['name'] = $name;
+        $_SESSION['cc_number'] = $cc_number;
+
+        // Redirecting the Patient to the Menu
+        header('Location:database/patientMenu.php');
     }
     catch(PDOException $e)
     {
@@ -58,6 +61,8 @@
 
         echo $e->getMessage();
         $_SESSION['regError'] = "Failed Registration!";
-        header('Location:database/patientSignUp.php');      /* Redirecting the Patient back to Registration */
+
+        // Redirecting the Patient back to Registration
+        header('Location:database/patientSignUp.php');
     }
 ?>
