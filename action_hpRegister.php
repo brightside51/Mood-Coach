@@ -58,6 +58,7 @@
             $_SESSION['regError'] = "CC Number: $cc_number";
         }
         
+        
         // Redirecting the Doctor back to Registration
         header('Location:database/hpSignUp.php');
     }

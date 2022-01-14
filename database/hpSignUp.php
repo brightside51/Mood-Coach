@@ -2,7 +2,6 @@
     session_start();
     $_SESSION['sel_usertype'] = 1;
     $regError = $_SESSION['regError'];
-    
     unset($_SESSION['regError']);
 ?>
 
