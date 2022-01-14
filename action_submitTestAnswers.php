@@ -4,6 +4,7 @@
 var_dump($_POST['test_answers']);
 die();
 
+/*
 // Post test answers into the database
 if(isset($_POST['test_answers']) && !empty($_POST['test_answers']))
 {
@@ -27,3 +28,4 @@ if($test_count == 0)
 $test_count++;
 
 ?>
+*/

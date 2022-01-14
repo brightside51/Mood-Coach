@@ -1,14 +1,5 @@
 <?php 
-  // GET VARIABLES FROM SESSION
 
-  // Connect to the Database
-  // Initialize database first: sqlite3 -init database.sql database.db
-  $dbh = new PDO('sqlite:./sql/database.db');
-  $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-  $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-  // -----------------------------------------------------------------------
-  
   // Get Test ID
   // There is one test per day of the week (total of 7)
   function getTestID($test_count)
@@ -46,8 +37,8 @@
       return $feedback;
   }
 
-  // CHECK NO. OF WEEKS AND DATES
-  // VARIABLES NEED TO INITIALIZED IDK WHERE!
+    // CHECK NO. OF WEEKS AND DATES
+    // VARIABLES NEED TO INITIALIZED IDK WHERE!
     if($test_date - $firsttestofweek == 7)
     {
         // Reset Test Counter

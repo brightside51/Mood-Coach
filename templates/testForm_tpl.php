@@ -1,8 +1,20 @@
+<?php
+function getQuestions($test_id)
+  {
+      global $dbh;
+      $stmt = $dbh->prepare('SELECT id, content FROM Question WHERE Question.test_id = ?');
+      $stmt->execute(array($test_id));
+      $questions = $stmt->fetchAll();
+
+      return $questions;
+  }
+  ?>
 <form action = "action_submitTestAnswers.php" method = "post" id = "test">
     <ol>
         <?php
 
         // Fetch Questions from the Database
+        $test_id = 1;
         $questions = getQuestions($test_id);
 
         // TESTAR!!! Tentar fazer o test_answers como um array
@@ -20,5 +32,5 @@
             </li>
             <?php } ?>
     </ol>
-    <input type = "button" value = "Send">
+    <input type = "submit" value = "Send">
 </form>
