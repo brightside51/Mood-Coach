@@ -35,7 +35,7 @@
 
         <!-- Submit Button -->
         <div class="button-section">
-            <a href = "homepage.html"><input type="submit" name="submit"></a>
+            <a href = "../database/homepage.php"><input type="submit" name="submit" value = "Done!"></a>
             <span class="privacy-policy">
             <input type="checkbox" name="tos">You agree to our <a href = ../tos.html>Terms of Service</a>. 
             </span>

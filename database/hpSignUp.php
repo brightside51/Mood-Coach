@@ -1,8 +1,7 @@
 <?php   
     session_start();
-    $_SESSION['usertype'] = 1;
+    $_SESSION['sel_usertype'] = 1;
     $regError = $_SESSION['regError'];
-    
     unset($_SESSION['regError']);
 ?>
 

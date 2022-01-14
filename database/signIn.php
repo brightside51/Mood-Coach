@@ -31,7 +31,7 @@
 
         <!-- Navigation Bar -->
         <div class = "navbar">
-            <a href = "patientSignUp.php">Register</a>
+            <a class = "right" href = "patientSignUp.php">Register</a>
             <a href = "homepage.php" class = "left">Homepage</a>
         </div>
 
