@@ -11,7 +11,8 @@
     $license_id = $_POST['license_id'];
     $workplace_id = $_POST['workplace_id'];
     $patients_assigned = 0;
-    $usertype = $_SESSION['usertype'];
+    $usertype = $_SESSION['sel_usertype'];
+    $_SESSION['usertype'] = 1;
 
     // SQLite Database Access
     $dbh = new PDO('sqlite:sql/moodCoach.db');

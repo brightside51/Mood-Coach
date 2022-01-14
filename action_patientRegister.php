@@ -12,7 +12,8 @@
     $health_number = $_POST['health_number'];
     $date_birth = $_POST['birthdate'];
     $address = $_POST['address'];
-    $usertype = $_SESSION['usertype'];
+    $usertype = $_SESSION['sel_usertype'];
+    $_SESSION['usertype'] = 0;
 
     /* SQLite Database Access */
     $dbh = new PDO('sqlite:sql/moodCoach.db');
