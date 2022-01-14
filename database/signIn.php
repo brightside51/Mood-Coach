@@ -40,8 +40,8 @@
 
             <!-- Form Title & Subtitle -->
             <h1>Sign In<span><?php echo $logError;
-                if($logError == "Invalid CC Number")
-                { ?>. Consider <a href = "patientSignUp.php">Signing Up</a>! <?php } ?></span></h1>
+                if($logError == "Unregistered CC Number")
+                { ?>. Consider <a href = "patientSignUp.php">signing Up</a>! <?php } ?></span></h1>
 
             <form method = "post" action = "../action_login.php">
 

@@ -43,6 +43,15 @@
         $stmt = $dbh->prepare('INSERT INTO Patient(cc_number, health_number, date_birth, address_, doctor) VALUES (?, ?, ?, ?, ?)');
         $stmt->execute(array($cc_number, $health_number, $date_birth, $address, $doctor_cc));
     }
+
+    // Search for CC Number inside the User Class
+    function findCC($cc_number)
+    {   global $dbh;
+        $stmt = $dbh->prepare('SELECT * FROM User WHERE cc_number = ?');
+        $stmt->execute(array($cc_number));
+        return $stmt->fetch();
+        // This value will be False if no corresponding CC Number is found
+    }
     
     /* Data Input into SQL Database */
     try
@@ -51,18 +60,21 @@
         $_SESSION['name'] = $name;
         $_SESSION['cc_number'] = $cc_number;
 
-        // Redirecting the Patient to the Menu
-        header('Location:database/patientMenu.php');
+        // Redirecting the Patient back to Homepage
+        header('Location:database/homepage.php');
     }
     catch(PDOException $e)
     {
-
-        // IF Clause for when User already exists
-
-        echo $e->getMessage();
+        //echo $e->getMessage();
         $_SESSION['regError'] = "Failed Registration!";
 
-        // Redirecting the Patient back to Registration
+        // User with this CC Number Already exists
+        if(findCC($cc_number))
+        {
+            $_SESSION['regError'] = "CC Number: $cc_number";
+        }
+        
+        // Redirecting the Doctor back to Registration
         header('Location:database/patientSignUp.php');
     }
 ?>

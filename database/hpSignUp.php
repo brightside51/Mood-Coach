@@ -2,6 +2,7 @@
     session_start();
     $_SESSION['usertype'] = 1;
     $regError = $_SESSION['regError'];
+    
     unset($_SESSION['regError']);
 ?>
 
@@ -26,14 +27,14 @@
     <body>
 
         <!-- Navigation Bar + User Type Changer -->
-        <?php $usertype = 1; include('../templates/signUpHeader_tpl.php'); ?>
+        <?php include('../templates/signUpHeader_tpl.php'); ?>
 
         <!---------------------------------------------------->
 
         <!-- Form Main Page Contents -->
         <div class="form-style">
 
-            <!-- Form Title & Subtitle -->
+            <!-- Form Title & Error Message -->
             <h1>Sign Up<span><?php if($regError)
                 { ?> User with <?php echo $regError ?> already exists.
                 Try <a href = "signIn.php">logging in</a>! <?php } ?></span></h1>

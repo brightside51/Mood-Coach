@@ -33,8 +33,11 @@
         <!-- Form Main Page Contents -->
         <div class="form-style">
 
-            <!-- Form Title & Subtitle -->
-            <h1>Sign Up<span><?php echo $regError ?></span></h1>
+            <!-- Form Title & Error Message -->
+            <h1>Sign Up<span><?php if($regError)
+                { ?> User with <?php echo $regError ?> already exists.
+                Try <a href = "signIn.php">logging in</a>! <?php } ?></span></h1>
+            
             <form method = "post" action = "../action_patientRegister.php">
 
                 <!-- Personal Information Section -->

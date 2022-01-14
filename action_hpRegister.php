@@ -43,20 +43,15 @@
         $_SESSION['name'] = $name;
         $_SESSION['cc_number'] = $cc_number;
 
-        // Redirecting the Doctor to the Menu
-        header('Location:database/hpMenu.php');
+        // Redirecting the Doctor back to Homepage
+        header('Location:database/homepage.php');
     }
     catch(PDOException $e)
     {
-
         //echo $e->getMessage();
         $_SESSION['regError'] = "Failed Registration!";
 
-        // ----------------------------------------------------------------------------------------
-
-        // IF Clause for when User already exists + Every other UNIQUE attribute
-
-
+        // User with this CC Number Already exists
         if(findCC($cc_number))
         {
             $_SESSION['regError'] = "CC Number: $cc_number";
