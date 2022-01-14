@@ -1,8 +1,9 @@
 <section id = "feedbackProgress">
     <h1>Your Feedback is Being Generated...</h1>
-        <progress max = "100" value = "80">
+        <progress max = "100" value = <?php ($test_count / 7) * 100 ?>>
             <div class = "progress-bar">
-                <span style = "width: 80%;">Progress: 80%</span>
+                <span style = "width: <?php ($test_count / 7) * 100 ?>%;">
+                Progress: <?php ($test_count / 7) * 100 ?>%</span>
             </div>
         </progress> 
     </section>
