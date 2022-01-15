@@ -40,15 +40,8 @@
         $usertype = $row['usertype']; $_SESSION['usertype'] = $usertype;
         $name = $row['name_']; $_SESSION['name'] = $name;
         
-        // Redirecting the User to the Corresponding Menu
-        if($usertype == 0)
-        {
-            header('Location:database/patientMenu.php');
-        }
-        else
-        {
-            header('Location:database/hpMenu.php');
-        }
+        // Redirecting the User back to Homepage
+        header('Location:database/homepage.php');
     }
 
     else            // User Not Found

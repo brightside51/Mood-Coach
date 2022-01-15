@@ -11,7 +11,8 @@
     $license_id = $_POST['license_id'];
     $workplace_id = $_POST['workplace_id'];
     $patients_assigned = 0;
-    $usertype = $_SESSION['usertype'];
+    $usertype = $_SESSION['sel_usertype'];
+    $_SESSION['usertype'] = 1;
 
     // SQLite Database Access
     $dbh = new PDO('sqlite:sql/moodCoach.db');
@@ -43,24 +44,20 @@
         $_SESSION['name'] = $name;
         $_SESSION['cc_number'] = $cc_number;
 
-        // Redirecting the Doctor to the Menu
-        header('Location:database/hpMenu.php');
+        // Redirecting the Doctor back to Homepage
+        header('Location:database/homepage.php');
     }
     catch(PDOException $e)
     {
-
         //echo $e->getMessage();
         $_SESSION['regError'] = "Failed Registration!";
 
-        // ----------------------------------------------------------------------------------------
-
-        // IF Clause for when User already exists + Every other UNIQUE attribute
-
-
+        // User with this CC Number Already exists
         if(findCC($cc_number))
         {
             $_SESSION['regError'] = "CC Number: $cc_number";
         }
+        
         
         // Redirecting the Doctor back to Registration
         header('Location:database/hpSignUp.php');

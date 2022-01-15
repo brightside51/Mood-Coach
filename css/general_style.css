@@ -5,15 +5,24 @@
 /* Body Style */
 body{font-family: Arial, Helvetica, sans-serif; margin: 0;}
 
-/* Top Navigation Bar Class*/
-.navbar{overflow: hidden; background-color: #333;}
+/* Top Navigation Bar*/
+.navbar
+{   overflow: hidden; 
+    background-color: #333;
+}
 .navbar a
-{   float: right; text-align: center;
-    display: block; padding: 14px 20px;
+{   
+    float: left; 
+    text-align: center;
+    display: block; 
+    padding: 14px 20px;
     font: normal 20px 'Bitter', serif;
-    color: white; text-decoration: none;}
-.navbar a.left{float: left;}
+    color: white; 
+    text-decoration: none;
+}
+.navbar a.right{float: right;}
 .navbar a.hover{background-color: #ddd;}
+.navbar a.active{background-color: #ccc;}
 
 /* User Type Navigation Bar*/
 .usertype{width: 100%; overflow: hidden; background-color: #ccc;}
@@ -24,30 +33,53 @@ body{font-family: Arial, Helvetica, sans-serif; margin: 0;}
 .usertype a.hover{background-color: #ddd;}
 .usertype a.active{background-color: #008080;}
 
-/* Footnotes/Footer */
+/* Footer */
 .footnote
 {   position: fixed; bottom: 0;
     width: 100%; height: 50px; padding: 0px;
     overflow: hidden; background-color: #333;}
-.footnote h2
+.footnote p
 {   font: normal 20px 'Bitter', serif; color: white; text-align: center;
     float: right; display: block;
     padding: 14px 20px; padding-top: 0px;}
-.footnote h2.left{float: left;}
+.footnote p.left{float: left;}
+.footnote p.right{float: right;}
 
 /* Adaptative Layout for Smaller Screen ()*/
 @media screen and (max-width:400px)
 {.navbar a{float: none;width: 100%;}; }
 
-fieldset{
-    display:inline; 
-    position:relative; 
-    border-color: #008080;}
+fieldset
+{
+    display: inline; 
+    position: relative; 
+    border-color: #008080;
+}
 
 #supportLines
 {   position: relative; 
-    align-self: flex-start;    } 
+    align-self: flex-start;    
+} 
 
-.supportLinks{
+.supportLinks
+{
     color: #008080;
+}
+
+/* Progress Bar */
+
+
+#feedbackProgress h1
+{
+    text-align: center;
+}
+
+progress[value]
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 750px;
+    height: 100px;
 }

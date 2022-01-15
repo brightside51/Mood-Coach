@@ -1,6 +1,6 @@
 <?php   
     session_start();
-    $_SESSION['usertype'] = 0;
+    $_SESSION['sel_usertype'] = 0;
     $regError = $_SESSION['regError'];
     unset($_SESSION['regError']);
 ?>
@@ -26,15 +26,19 @@
     <body>
 
         <!-- Navigation Bar + User Type Changer -->
-        <?php include('../templates/signUpHeader_tpl.php'); ?>
+        <?php include('../templates/signUpHeader_tpl.php');
+        require('hpList.php'); ?>
 
         <!---------------------------------------------------->
 
         <!-- Form Main Page Contents -->
         <div class="form-style">
 
-            <!-- Form Title & Subtitle -->
-            <h1>Sign Up<span><?php echo $regError ?></span></h1>
+            <!-- Form Title & Error Message -->
+            <h1>Sign Up<span><?php if($regError)
+                { ?> User with <?php echo $regError ?> already exists.
+                Try <a href = "signIn.php">logging in</a>! <?php } ?></span></h1>
+            
             <form method = "post" action = "../action_patientRegister.php">
 
                 <!-- Personal Information Section -->
@@ -77,9 +81,16 @@
                     <input type = "number" id = "health_number" name = "health_number"
                     min = "10000000" max = "99999999" required/></label>
 
+                    <?php foreach($hpList as $hp){echo $hp['name_'];}?>
+
                     <!-- Health Professional Input -->
                     <label for = "doctor">Responsible Medical Professional
-                    <input type = "text" id = "doctor" name = "doctor" required></input></label>
+                    <input type = "text" id = "doctor" name = "doctor" list = "hpList" required></input></label>
+                    <datalist id = "hpList">
+                    <?php foreach($hpList as $hp){ ?>
+                        <option value = <?php echo $hp['name_']; ?>>
+                    <?php } ?>
+                    </datalist>
                 </div>
 
                 <!---------------------------------------------------->

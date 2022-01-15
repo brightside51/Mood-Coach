@@ -1,0 +1,24 @@
+<form action = "action_submitTestAnswers.php" method = "post" id = "test">
+    <ol>
+        <?php
+
+        // Fetch Questions from the Database
+        $questions = getQuestions($test_id);
+
+        // Display Questions and Possible Answers
+        foreach ($questions as $key => $value) 
+        { ?>
+            <li>
+                <h3><?php echo $value ?></h3>
+                <div>
+                <input type = "radio" required = true name = "test_answers[<?php echo $test_id ?>][<?php echo $key ?>]" value = "Strongly Disagree">Strongly Disagree
+                    <input type = "radio" required = true name = "test_answers[<?php echo $test_id ?>][<?php echo $key ?>]" value = "Disagree">Disagree
+                    <input type = "radio" required = true name = "test_answers[<?php echo $test_id ?>][<?php echo $key ?>]" value = "Neutral">Neutral
+                    <input type = "radio" required = true name = "test_answers[<?php echo $test_id ?>][<?php echo $key ?>]" value = "Agree">Agree
+                    <input type = "radio" required = true name = "test_answers[<?php echo $test_id ?>][<?php echo $key ?>]" value = "Strongly Agree">Strongly Agree
+                </div>
+            </li>
+            <?php } ?>
+    </ol>
+    <input type = "submit" value = "Send">
+</form>

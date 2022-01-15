@@ -21,14 +21,14 @@
 
         <!-- Navigation Bar -->
         <div class = "navbar">
-            <a href = "signIn.php">Login</a>
-            <a href = "homepage.php" class = "left">Homepage</a>
+            <a class = "right" href = "signIn.php">Login</a>
+            <a href = "homepage.php">Homepage</a>
         </div>
 
         <!-- Changing between User Type -->
         <div class = "usertype">
-            <a <?php if($_SESSION['usertype'] == 1){ ?> class = "active" <?php } ?> href = "hpSignUp.php">Health Professional</a>
-            <a <?php if($_SESSION['usertype'] == 0){ ?> class = "active" <?php } ?> href = "patientSignUp.php">Patient</a>
+            <a <?php if($_SESSION['sel_usertype'] == 1){ ?> class = "active" <?php } ?> href = "hpSignUp.php">Health Professional</a>
+            <a <?php if($_SESSION['sel_usertype'] == 0){ ?> class = "active" <?php } ?> href = "patientSignUp.php">Patient</a>
         </div>
         
         
