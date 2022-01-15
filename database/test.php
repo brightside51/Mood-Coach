@@ -24,13 +24,23 @@ $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       return $questions;
   }
 
+  function generateQuestionID($test_id)
+  {
+    for($i = 1; $i <= 20; $i++)
+    {
+        $id = array_push($id, $i);
+    }
+    return ($i . $test_id);
+  }
+  
     // Post Quiz Answers into the Database
-    function postGivenAnswers($questions, $answers)
+    function postGivenAnswers($answers, $qid)
     {
         global $dbh;
-        $stmt = $dbh->prepare('INSERT INTO Question (content, answer) VALUES (?, ?)');
-        $stmt->execute(array($questions, $answers));
+        $stmt = $dbh->prepare('UPDATE Question SET answer = ? WHERE Question.id = ?');
+        $stmt->execute(array($answers, $qid));
     }
+
   // Get Feedback from the Database
   /* ! Feedback won't be posted from the health professional, as initially desired !
        There will be various random feedbacks present in the database.
