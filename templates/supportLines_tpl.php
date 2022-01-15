@@ -1,10 +1,12 @@
+<?php
+    include('homepageHeader_tpl.php');
+    $_SESSION['page'] = 'org';
+    include('footer_tpl.php');
+    require('../database/supportInfo.php');  
+?>
 <html>
-    <?php 
-        require('../database/supportInfo.php');
-        include('homepageHeader_tpl.php');
-        include('footer_tpl.php');
-    ?>
-    <div>
+    <body>
+       <div>
         <h2 class = "page_title" > Support > Support Lines</h2>
     </div>
     <div>
@@ -17,8 +19,8 @@
             </li>
         <?php } ?>
         </ul>  
-    </div>
-    
+    </div> 
+    </body>   
 </html>  
     
    

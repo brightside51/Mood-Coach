@@ -1,10 +1,9 @@
-
-<?php 
+<?php
 require('../database/init.php');
 $post_content = $_POST ['post'];
 
-function insertPost($post_content, $username)  
-{ 
+function insertPost($post_content, $username)
+{
     global $dbh;
     $stmt = $dbh->prepare('INSERT INTO Post(text_, user) VALUES (?, ?)');
     $stmt->execute(array($post_content, $username));
@@ -22,8 +21,8 @@ function getPost($lastId)
 
 if (isset ($_POST['post']))
 {
-    $lastId = insertPost($post_content, $_SESSION['username']);       
+    $lastId = insertPost($post_content, $_SESSION['username']);
 }
-header('Location:templates/forum_tpl.php'); 
-$postInfo = getPost($lastId); 
-?> 
+header('Location:templates/forum_tpl.php');
+$postInfo = getPost($lastId);
+?>

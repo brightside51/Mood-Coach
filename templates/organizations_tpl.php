@@ -1,15 +1,11 @@
-<?php session_start();?>
-<html>
-    <body>
-        
-    </body>
-    <?php
-    /* session_start(); echo $_SESSION['name']; */
+<?php
     include('homepageHeader_tpl.php');
+    $_SESSION['page'] = 'org';
     include('footer_tpl.php');
     require('../database/supportInfo.php');  
-    ?>
-
+?>
+<html>
+<body>
     <div>
         <h2 class = "page_title" > Support > Organizations</h2>
     </div>
@@ -29,7 +25,8 @@
         </li>
         <?php } ?>    
         </div>    
-    </div>      
+    </div>
+</body>     
 </html>
 
 

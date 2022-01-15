@@ -1,10 +1,10 @@
-<html>   
-    <?php
-    // start_session() 
+<?php
     include('homepageHeader_tpl.php');
+    $_SESSION['page'] = 'forum';
     include('footer_tpl.php');
-    ?>
-    
+    require('../database/supportInfo.php');  
+?>
+<html>   
     <body>
     <div class= "">
         <h1> Forum </h1>
