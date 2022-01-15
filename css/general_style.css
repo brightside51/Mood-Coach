@@ -66,20 +66,132 @@ fieldset
     color: #008080;
 }
 
+/*---------------- TEST MENU ----------------*/
+#testMenu
+{
+    display: flex; 
+    flex-direction: column; 
+    overflow: auto;
+    padding: 0 0 55px; 
+    padding-left: 50px; 
+    padding-right: 50px;
+    background-color: #ddd;
+}
+
 /* Progress Bar */
-
-
 #feedbackProgress h1
 {
     text-align: center;
+    color: #333;
+
+    font-size: 2em;
+    font-family: 'Times New Roman', Times, serif;
 }
 
-progress[value]
+progress
 {
     display: block;
     margin-left: auto;
     margin-right: auto;
 
+    border-radius: 10px;
+
     width: 750px;
-    height: 100px;
+    height: 75px;
+}
+
+progress::-webkit-progress-bar
+{
+    background-color: rgb(141, 141, 141);
+    border-radius: 10px;
+}
+
+progress::-webkit-progress-value 
+{
+    background-color: #008080;
+    border-radius: 10px;
+}
+
+/* Menu Items */
+.weekButton
+{
+    display: block;
+
+    width: 200px;
+    height: 50px;
+    background: rgb(235, 120, 135);
+    padding: 10px;
+
+    text-align: center;
+    text-decoration: none;
+    color: white;
+
+    border-radius: 5px;
+    border-color: white;
+    border-style: solid;
+    border-width : 2px 2px 2px 2px;
+
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 25px;
+}
+
+.testButton
+{
+    display: block;
+
+    width: 200px;
+    height: 50px;
+
+    background: #008080;
+    padding: 10px;
+
+    text-align: center;
+    text-decoration: none;
+    color: white;
+
+    border-radius: 5px;
+    border-radius: 5px;
+    border-color: white;
+    border-style: solid;
+    border-width : 2px 2px 2px 2px;
+    
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 25px;
+}
+
+.feedbackButton
+{
+    display: block;
+    width: 200px;
+    height: 50px;
+    background: rgb(210, 135, 10);
+    padding: 10px;
+
+    text-align: center;
+    text-decoration: none;
+    color: white;
+
+    border-radius: 5px;
+    border-color: white;
+    border-style: solid;
+    border-width : 2px 2px 2px 2px;
+
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 25px;
+}
+
+/* ---------- TEST FORM ------------ */
+
+#testForm
+{
+    display: flex; 
+    flex-direction: column; 
+    overflow: auto;
+    padding: 0 0 55px; 
+    padding-left: 50px; 
+    padding-right: 50px;
+    background-color: #ddd;
 }

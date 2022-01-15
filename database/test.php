@@ -1,5 +1,9 @@
 <?php 
 
+$dbh = new PDO('sqlite:./sql/moodCoach.db');
+$dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
   // Get Test ID
   // There is one test per day of the week (total of 7)
   function getTestID($test_count)
@@ -20,6 +24,13 @@
       return $questions;
   }
 
+    // Post Quiz Answers into the Database
+    function postGivenAnswers($questions, $answers)
+    {
+        global $dbh;
+        $stmt = $dbh->prepare('INSERT INTO Question (content, answer) VALUES (?, ?)');
+        $stmt->execute(array($questions, $answers));
+    }
   // Get Feedback from the Database
   /* ! Feedback won't be posted from the health professional, as initially desired !
        There will be various random feedbacks present in the database.
