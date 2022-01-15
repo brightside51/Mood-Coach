@@ -1,6 +1,6 @@
 <?php
 // Database Related
-$test_count = 4;
+$test_count = 1;
 
 /* IF TIME ALLOWS, ADD DATES!
 https://stackoverflow.com/questions/10469037/subtracting-two-dates-in-php 

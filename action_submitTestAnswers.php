@@ -1,11 +1,13 @@
 <?php
 
 // Post test answers into the database
-if(isset($_POST['test_answers']) && !empty($_POST['test_answers']))
-{
-    $answers_byID = $_POST['test_answers'];
-}
+$answers = $_POST['test_answers'];
+$qid = generateQuestionID($test_id);
+postGivenAnswers($answers, $qid);
 
+header('Location: testCompleted.php');
+
+/*
 // Save date of the first test of the week
 if($test_count == 0)
 {
@@ -14,5 +16,5 @@ if($test_count == 0)
 
 // Count Another Completed Test
 $test_count++;
-
+*/
 ?>

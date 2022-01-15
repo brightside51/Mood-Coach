@@ -18,11 +18,12 @@
             <progress 
                 max = "100" value = <?php echo ($test_count / 7) * 100 ?>>
             </progress>
-            <ul>
-                <a class = weekButton href = "weeklyResults.php">Weekly Results</a>
+
+            <div class = menuButtons>
                 <a class = testButton href = "testForm.php">Start Test</a>
+                <a class = weekButton href = "weeklyResults.php">Weekly Results</a>
                 <a class = feedbackButton href = "previousFeedback.php">Previous Feedback</a>
-            </ul>
+            </div>
         <?php }
         ?>
     </section>
