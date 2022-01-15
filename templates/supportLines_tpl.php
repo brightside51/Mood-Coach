@@ -1,7 +1,7 @@
 <html>
     <?php 
         require('../database/supportInfo.php');
-        include('inMenuHeader_tpl.php');
+        include('homepageHeader_tpl.php');
         include('footer_tpl.php');
     ?>
     <div>

@@ -1,6 +1,6 @@
 <html>   
     <?php
-    include('inMenuHeader_tpl.php');
+    include('homepageHeader_tpl.php');
     include('footer_tpl.php');
     ?>
 
@@ -21,7 +21,7 @@
         </div>
         <div class = "container" >
             <div id="sptext">
-                <h4 class="support">Support Lines</h4>
+                <h4 class="support">Organizations</h4>
                 <p class = "support"> There are many organizations and associassions that specialyze in dealing and helpin patients with different mental health problems. In this
                     <a href="organizations_tpl.php">page</a>, you can find some of those organizations. Know that you are not alone!
                 </p>    

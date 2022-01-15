@@ -1,7 +1,7 @@
 <html>   
     <?php
     // start_session() 
-    include('inMenuHeader_tpl.php');
+    include('homepageHeader_tpl.php');
     include('footer_tpl.php');
     ?>
     

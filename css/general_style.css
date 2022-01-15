@@ -49,13 +49,7 @@ body{font-family: Arial, Helvetica, sans-serif; margin: 0;}
 @media screen and (max-width:400px)
 {.navbar a{float: none;width: 100%;}; }
 
-fieldset
-{
-    display: inline; 
-    position: relative; 
-    border-color: #008080;
-}
-
+/* Support Style*/
 #supportLines
 {   position: relative; 
     align-self: flex-start;    
@@ -66,8 +60,48 @@ fieldset
     color: #008080;
 }
 
-/* Progress Bar */
+.page_title{
+    padding: 0 0 0px; margin-left: 70px; padding-right: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+}
 
+.container {
+    display: flex;
+    align-items: center;
+    box-sizing: content-box;
+    margin-left: 100px;
+  }
+
+.supportImg{
+    flex-basis: 50%;
+    padding-top: 50px;
+    /*float:right;*/
+}
+
+.orgImg{
+    flex-basis: 50%;
+    padding-top: 50px;
+    margin-left: 100px;
+    /*float:right;*/
+    height:auto;
+    width:auto;
+}
+
+.support{
+    font-size: 30px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: justify;
+    padding: 0 0 0px; padding-left: 100px; margin-right: 50px;
+    margin-bottom: 50px;
+}
+
+#sptext{
+    flex-basis: 70%;
+    margin-right: 30px;
+}
+
+/* Progress Bar */
 
 #feedbackProgress h1
 {
@@ -83,3 +117,4 @@ progress[value]
     width: 750px;
     height: 100px;
 }
+

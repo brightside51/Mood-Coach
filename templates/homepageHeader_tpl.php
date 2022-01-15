@@ -41,18 +41,18 @@ $_SESSION['page'] = 'home'; ?>
         
         <!-- Navigation Bar -->
         <div class = "navbar">
-            <a <?php if($_SESSION['page'] == 'home'){ ?> class = "active" <?php } ?> href = "#"><img src = '../images/cover1.jpg'></a>
+            <a <?php if($_SESSION['page'] == 'home'){ ?> class = "active" <?php } ?> href = "../database/homepage.php"><img src = '../images/cover1.jpg'></a>
             
             <?php if(isset($_SESSION['cc_number']))            // Clause: Session already Started
             { ?>
 
                 <a class = "right" href = "../action_logout.php">Logout</a>
-                <a <?php if($_SESSION['page'] == 'forum'){ ?> class = "active" <?php } ?> href = "../tos.html">Forum</a>
+                <a <?php if($_SESSION['page'] == 'forum'){ ?> class = "active" <?php } ?> href = "../templates/forum_tpl.php">Forum</a>
 
                 <?php if($_SESSION['usertype'] == 0)    // Patient Navigation Bar
                 { ?>
                     <a <?php if($_SESSION['page'] == 'test'){ ?> class = "active" <?php } ?> href = "../testMenu.php">Tests</a>
-                    <a <?php if($_SESSION['org'] == 'home'){ ?> class = "active" <?php } ?> href = "../tos.html">Organizations</a>
+                    <a <?php if($_SESSION['org'] == 'home'){ ?> class = "active" <?php } ?> href = "../templates/support_tpl.php">Organizations</a>
                 <?php } 
                 
                 else                                    // Health Professional Navigation Bar
@@ -64,8 +64,8 @@ $_SESSION['page'] = 'home'; ?>
 
             // Clause: Session not Started or Ended
             else{ ?>                                
-                <a class = "right" href = "signIn.php">Login</a>
-                <a class = "right" href = "patientSignUp.php">Register</a>
+                <a class = "right" href = "../database/signIn.php">Login</a>
+                <a class = "right" href = "../database/patientSignUp.php">Register</a>
             <?php } ?>
             
         </div>

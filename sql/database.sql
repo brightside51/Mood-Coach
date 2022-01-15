@@ -187,9 +187,7 @@ CREATE TABLE Organization (
 
     website URL UNIQUE NOT NULL,                -- The Organization's website must be unique
     contact_email TEXT UNIQUE NOT NULL,         -- The Organization's contact email must be unique
-    contact_tel1 INTEGER UNIQUE CHECK(contact_tel1 > 200000000), -- The Organization's support line must be unique and a phone number
-    contact_tel2 INTEGER UNIQUE CHECK(contact_tel2 > 200000000),
-    contact_tel3 INTEGER UNIQUE CHECK(contact_tel3 > 200000000)
+    contact_tel TEXT   -- The Organization's support line must be unique and a phone number
 );
 
 CREATE TABLE SupportLine (
@@ -199,9 +197,7 @@ CREATE TABLE SupportLine (
 
     website URL UNIQUE NOT NULL,                
     schedule TEXT,        
-    contact_tel1 INTEGER UNIQUE CHECK(contact_tel1 > 200000000), 
-    contact_tel2 INTEGER UNIQUE CHECK(contact_tel2 > 200000000),
-    contact_tel3 INTEGER UNIQUE CHECK(contact_tel3 > 200000000)
+    contact_tel TEXT  
 );
 
 -------------------------------------------------------------------------------------------------------------------------------
@@ -222,14 +218,14 @@ INSERT INTO HealthProfessional (cc_number, license_id, workplace_id, patients_as
 -- INSERT INTO User (cc_number, password_, name_, phone_number, email) VALUES (10000000, "amartadias", "admin", 929187541, "up201806879@fe.up.pt");
 
 
-INSERT INTO Organization (name_, website, contact_email, contact_tel1) VALUES ("FNERDM", "http://www.fnerdm.pt/", "geral@fnerdm.pt", 939564509);
-INSERT INTO Organization (name_, website, contact_email, contact_tel1, contact_tel2) VALUES ("ENCONTRAR+SE", "https://www.encontrarse.pt/", "geral@encontrarse.pt", 935592507, 220101417);
-INSERT INTO Organization (name_, website, contact_email, contact_tel1, contact_tel2, contact_tel3) VALUES ("ADEB", "https://www.adeb.pt/", "adeb@adeb.pt", 218540740, 218540744, 218540745);
+INSERT INTO Organization (name_, website, contact_email, contact_tel) VALUES ("FNERDM", "http://www.fnerdm.pt/", "geral@fnerdm.pt", "939564509");
+INSERT INTO Organization (name_, website, contact_email, contact_tel) VALUES ("ENCONTRAR+SE", "https://www.encontrarse.pt/", "geral@encontrarse.pt", "935592507 | 220101417");
+INSERT INTO Organization (name_, website, contact_email, contact_tel) VALUES ("ADEB", "https://www.adeb.pt/", "adeb@adeb.pt", "218540740 | 218540744 | 218540745");
 
-INSERT INTO SupportLine (name_, website, schedule, contact_tel1, contact_tel2, contact_tel3) VALUES ("SOS Voz Amiga", "https://www.sosvozamiga.org/", "15h30 - 00h30", 213544546, 912802669, 963524660);
-INSERT INTO SupportLine (name_, website, schedule, contact_tel1) VALUES ("Vozes Amigas de Esperança de Portugal", "https://www.voades.pt/quem-somos", "16:00 - 22:00", 222030707);
-INSERT INTO SupportLine (name_, website, schedule, contact_tel1) VALUES ("TELEFONE DA AMIZADE", "http://www.telefone-amizade.pt/site/", "16:00 - 23:00", 222080707);
-INSERT INTO SupportLine (name_, website, schedule, contact_tel1) VALUES ("Voz de Apoio", "https://www.vozdeapoio.pt/", "21h00 - 24h00", 225506070);
+INSERT INTO SupportLine (name_, website, schedule, contact_tel) VALUES ("SOS Voz Amiga", "https://www.sosvozamiga.org/", "15h30 - 00h30", "213544546 | 912802669 | 963524660");
+INSERT INTO SupportLine (name_, website, schedule, contact_tel) VALUES ("Vozes Amigas de Esperança de Portugal", "https://www.voades.pt/quem-somos", "16:00 - 22:00", "222030707");
+INSERT INTO SupportLine (name_, website, schedule, contact_tel) VALUES ("TELEFONE DA AMIZADE", "http://www.telefone-amizade.pt/site/", "16:00 - 23:00", "222080707");
+INSERT INTO SupportLine (name_, website, schedule, contact_tel) VALUES ("Voz de Apoio", "https://www.vozdeapoio.pt/", "21h00 - 24h00", "225506070");
 -- INSERT INTO User (cc_number, password_, name_, phone_number, email) VALUES (11000000, "japmartins", "admin", 916237581, "up208106246@fe.up.pt");
 -- INSERT INTO User (cc_number, password_, name_, phone_number, email) VALUES (10000000, "amartadias", "admin", 929187541, "up201806879@fe.up.pt");
 
