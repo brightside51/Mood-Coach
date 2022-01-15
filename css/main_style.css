@@ -9,6 +9,11 @@
 
 /* Homepage Contents */
 .main
-{   display: flex; flex-direction: column; overflow: auto;
-    padding: 0 0 55px; padding-left: 50px; padding-right: 50px;
-    background-color: #ddd;}
+{   display: flex; 
+    flex-direction: column; 
+    overflow: auto;
+    padding: 0 0 55px; 
+    padding-left: 50px; 
+    padding-right: 50px;
+    background-color: #ddd;
+}

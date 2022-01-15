@@ -34,9 +34,5 @@
         </div>
 
         <!-- Footnotes/Footer -->
-        <?php include('../templates/footer_tpl.php')?>
-
-    </body>
-
-
-</html>
+        <?php 
+        include('../templates/footer_tpl.php')?>
