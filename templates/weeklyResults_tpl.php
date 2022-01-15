@@ -1,8 +1,5 @@
 <section>
-    <?php
-    // VER PRIMEIRO A QUESTÃO DE COMO GUARDAR AS RESPOSTAS!!!!!
-    ?>
-
+    
     <h1><?php "{$_SESSION['name']} Weekly Results"?></h1>
 
     <?php

@@ -1,3 +1,12 @@
+        <footer class = "footnote">
+            <p class = "left">Mood Coach &copy</p>
+            <p class = "right">2022</p>
+        </footer>
+    </body>
+</html>
+
+<?php
+/*
 <!DOCTYPE html>
 <html lang = "en" dir = "ltr"> 
 
@@ -22,3 +31,5 @@
         
     </body>
 </html>
+*/
+?>

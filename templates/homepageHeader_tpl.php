@@ -51,7 +51,7 @@ $_SESSION['page'] = 'home'; ?>
 
                 <?php if($_SESSION['usertype'] == 0)    // Patient Navigation Bar
                 { ?>
-                    <a <?php if($_SESSION['page'] == 'test'){ ?> class = "active" <?php } ?> href = "testMenu.php">Tests</a>
+                    <a <?php if($_SESSION['page'] == 'test'){ ?> class = "active" <?php } ?> href = "../testMenu.php">Tests</a>
                     <a <?php if($_SESSION['org'] == 'home'){ ?> class = "active" <?php } ?> href = "../tos.html">Organizations</a>
                 <?php } 
                 
