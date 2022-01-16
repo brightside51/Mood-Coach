@@ -3,47 +3,37 @@
     <?php
     // Get All Feedbacks Available in the Database
     $feedback = getFeedback();
-    ?>
 
-    <h1><?php echo $username . " | Feedback History"?></h1>
+    if($test_count == 0)
+    {?>
+        <h1>In order to have get feedback, you have to submit tests!</h1>
+        <a class = testButton href = "testForm.php">Start Test</a>
+    <?php
+    }
+    else
+    {?>
+        <h1><?php echo "{$_SESSION['name']} | Feedback History"?></h1>
     <table>
-        <thead>
+        <tr>
+            <th>Test No.</th>
+            <th>Diagnosis</th>
+            <th>Prescription</th>
+            <th>Advice</th>
+        </tr>
+
+        <?php
+        for($i = 0; $i < $test_count; $i++)
+        {?>
             <tr>
-                <th>Week No.</th>
-                <th>Diagnosis</th>
-                <th>Prescription</th>
-                <th>Advice</th>
+                <td><?php echo ($i + 1)?></td>
+                <td><?php echo $feedback[$i]['diagnosis']?></td>
+                <td><?php echo $feedback[$i]['prescription']?></td>
+                <td><?php echo $feedback[$i]['advice']?></td>
             </tr>
-        </thead>
-
-        <tbody>
-            <?php
-
-            // Check array dimensions 
-            for($i = 0; $i < $week; $i++)
-            {?>
-                <tr>
-                    <?php 
-                    if($test_count == 0 && ($test_date != $firsttestofweek))
-                    {?>
-                        <td><?php echo $i ?></td>
-                        <td><?php echo "No Feedback" ?></td>
-                        <td><?php echo "No Feedback" ?></td>
-                        <td><?php echo "No Feedback" ?></td>
-                    <?php 
-                    } 
-                    else
-                    {?>
-                        <td><?php echo $i ?></td>
-                        <td><?php echo $feedback[$i][0] ?></td>
-                        <td><?php echo $feedback[$i][1] ?></td>
-                        <td><?php echo $feedback[$i][2] ?></td>
-                    <?php 
-                    }?>
-                </tr>
-            <?php }
-            ?>
-        </tbody>
+        <?php } 
+        ?>
     </table>
-
+    <?php }
+    ?>
+    
 </section>

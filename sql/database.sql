@@ -19,6 +19,7 @@ DROP TABLE IF EXISTS Comment;
 DROP TABLE IF EXISTS Organization;
 DROP TABLE IF EXISTS HealthProfessional;
 DROP TABLE IF EXISTS Question;
+DROP TABLE IF EXISTS Answer;
 DROP TABLE IF EXISTS User;
 DROP TABLE IF EXISTS Patient;
 DROP TABLE IF EXISTS Test;
@@ -85,6 +86,7 @@ CREATE TABLE Patient (
     health_number INTEGER NOT NULL UNIQUE,
     date_birth TEXT NOT NULL,               -- Date in TEXT form will correspond to YYYY-MM-DD
     address_ TEXT NOT NULL,
+    test_count INTEGER NOT NULL DEFAULT 0,
 
     -- Foreign Key referring to HealthProfessional (1 to Many)
     doctor INTEGER NOT NULL,                -- Cannot be UNIQUE, since more than one patient can have the same Doctor
@@ -100,8 +102,7 @@ CREATE TABLE Test (
     -- Test ID Primary Key
     test_id INTEGER PRIMARY KEY AUTOINCREMENT,
 
-    date_ TEXT,            -- Date in TEXT form will correspond to YYYY-MM-DD (only 1 Test a day)
-    test_patientdate INTEGER,       -- To save information about the test, according to the patient and to the date        
+    date_ TEXT,            -- Date in TEXT form will correspond to YYYY-MM-DD (only 1 Test a day)       
 
     -- Foreign Key referring to HealthProfessional and Patient (1 to Many)
     health_professional INTEGER UNIQUE,    -- A Test will only exist if 1 and 1 Doctor only is responsible for it
@@ -122,11 +123,20 @@ CREATE TABLE Question (
     content TEXT NOT NULL,
     parameter TEXT CHECK(parameter = "Profound Sadness" OR parameter = "Fatigue" OR parameter = "Anxiety" OR parameter = "Difficulty Concentrating" OR parameter = "Worry and Fear" OR parameter = "Mood Swings" OR parameter = "Changes in Eating / Sleeping Habits" OR parameter = "Anger and Irritability"),
 
-    answer TEXT,
-
     -- Foreign Key referring to Test (Composition)
     test_id INTEGER NOT NULL references Test(test_id)
     -- Various questions can belong to the same Test. Since it is a composition, if a question is deleted, the Test won't be
+);
+
+CREATE TABLE Answer (
+
+    ans_id INTEGER PRIMARY KEY,
+    -- Answer ID = [1, 20] . Test ID . CC Number
+
+    given_answer TEXT,
+
+    cc_number INTEGER REFERENCES Patient(cc_number),
+    id INTEGER REFERENCES Question(id)
 );
 
 -------------------------------------------------------------------------------------------------------------------------------
@@ -187,9 +197,7 @@ CREATE TABLE Organization (
 
     website URL UNIQUE NOT NULL,                -- The Organization's website must be unique
     contact_email TEXT UNIQUE NOT NULL,         -- The Organization's contact email must be unique
-    contact_tel1 INTEGER UNIQUE CHECK(contact_tel1 > 200000000), -- The Organization's support line must be unique and a phone number
-    contact_tel2 INTEGER UNIQUE CHECK(contact_tel2 > 200000000),
-    contact_tel3 INTEGER UNIQUE CHECK(contact_tel3 > 200000000)
+    contact_tel TEXT   -- The Organization's support line must be unique and a phone number
 );
 
 CREATE TABLE SupportLine (
@@ -199,9 +207,7 @@ CREATE TABLE SupportLine (
 
     website URL UNIQUE NOT NULL,                
     schedule TEXT,        
-    contact_tel1 INTEGER UNIQUE CHECK(contact_tel1 > 200000000), 
-    contact_tel2 INTEGER UNIQUE CHECK(contact_tel2 > 200000000),
-    contact_tel3 INTEGER UNIQUE CHECK(contact_tel3 > 200000000)
+    contact_tel TEXT  
 );
 
 -------------------------------------------------------------------------------------------------------------------------------
@@ -222,14 +228,14 @@ INSERT INTO HealthProfessional (cc_number, license_id, workplace_id, patients_as
 -- INSERT INTO User (cc_number, password_, name_, phone_number, email) VALUES (10000000, "amartadias", "admin", 929187541, "up201806879@fe.up.pt");
 
 
-INSERT INTO Organization (name_, website, contact_email, contact_tel1) VALUES ("FNERDM", "http://www.fnerdm.pt/", "geral@fnerdm.pt", 939564509);
-INSERT INTO Organization (name_, website, contact_email, contact_tel1, contact_tel2) VALUES ("ENCONTRAR+SE", "https://www.encontrarse.pt/", "geral@encontrarse.pt", 935592507, 220101417);
-INSERT INTO Organization (name_, website, contact_email, contact_tel1, contact_tel2, contact_tel3) VALUES ("ADEB", "https://www.adeb.pt/", "adeb@adeb.pt", 218540740, 218540744, 218540745);
+INSERT INTO Organization (name_, website, contact_email, contact_tel) VALUES ("FNERDM", "http://www.fnerdm.pt/", "geral@fnerdm.pt", "939564509");
+INSERT INTO Organization (name_, website, contact_email, contact_tel) VALUES ("ENCONTRAR+SE", "https://www.encontrarse.pt/", "geral@encontrarse.pt", "935592507 | 220101417");
+INSERT INTO Organization (name_, website, contact_email, contact_tel) VALUES ("ADEB", "https://www.adeb.pt/", "adeb@adeb.pt", "218540740 | 218540744 | 218540745");
 
-INSERT INTO SupportLine (name_, website, schedule, contact_tel1, contact_tel2, contact_tel3) VALUES ("SOS Voz Amiga", "https://www.sosvozamiga.org/", "15h30 - 00h30", 213544546, 912802669, 963524660);
-INSERT INTO SupportLine (name_, website, schedule, contact_tel1) VALUES ("Vozes Amigas de Esperança de Portugal", "https://www.voades.pt/quem-somos", "16:00 - 22:00", 222030707);
-INSERT INTO SupportLine (name_, website, schedule, contact_tel1) VALUES ("TELEFONE DA AMIZADE", "http://www.telefone-amizade.pt/site/", "16:00 - 23:00", 222080707);
-INSERT INTO SupportLine (name_, website, schedule, contact_tel1) VALUES ("Voz de Apoio", "https://www.vozdeapoio.pt/", "21h00 - 24h00", 225506070);
+INSERT INTO SupportLine (name_, website, schedule, contact_tel) VALUES ("SOS Voz Amiga", "https://www.sosvozamiga.org/", "15h30 - 00h30", "213544546 | 912802669 | 963524660");
+INSERT INTO SupportLine (name_, website, schedule, contact_tel) VALUES ("Vozes Amigas de Esperança de Portugal", "https://www.voades.pt/quem-somos", "16:00 - 22:00", "222030707");
+INSERT INTO SupportLine (name_, website, schedule, contact_tel) VALUES ("TELEFONE DA AMIZADE", "http://www.telefone-amizade.pt/site/", "16:00 - 23:00", "222080707");
+INSERT INTO SupportLine (name_, website, schedule, contact_tel) VALUES ("Voz de Apoio", "https://www.vozdeapoio.pt/", "21h00 - 24h00", "225506070");
 -- INSERT INTO User (cc_number, password_, name_, phone_number, email) VALUES (11000000, "japmartins", "admin", 916237581, "up208106246@fe.up.pt");
 -- INSERT INTO User (cc_number, password_, name_, phone_number, email) VALUES (10000000, "amartadias", "admin", 929187541, "up201806879@fe.up.pt");
 
