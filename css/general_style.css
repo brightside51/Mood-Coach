@@ -49,7 +49,8 @@ body{font-family: Arial, Helvetica, sans-serif; margin: 0;}
 @media screen and (max-width:400px)
 {.navbar a{float: none;width: 100%;}; }
 
-/* Support Style*/
+/* ------- Support Style ------ */
+
 #supportLines
 {   position: relative; 
     align-self: flex-start;    
@@ -62,22 +63,24 @@ body{font-family: Arial, Helvetica, sans-serif; margin: 0;}
 
 .page_title{
     padding: 0 0 0px; margin-left: 70px; padding-right: 50px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 25px;
 }
 
 .container {
     display: flex;
     align-items: center;
     box-sizing: content-box;
-    margin-left: 100px;
+    margin-left: 50px;
+    margin : auto;
+    width: 50%;
   }
 
-.supportImg{
+/* .supportImg{
     flex-basis: 50%;
-    padding-top: 50px;
-    /*float:right;*/
-}
+    margin-top: 50px;
+    margin-right: 50px;
+} */
 
 .orgImg{
     flex-basis: 50%;
@@ -89,18 +92,55 @@ body{font-family: Arial, Helvetica, sans-serif; margin: 0;}
 }
 
 .support{
-    font-size: 30px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-align: justify;
-    padding: 0 0 0px; padding-left: 100px; margin-right: 50px;
+    margin-right: 50px;
     margin-bottom: 50px;
 }
 
 #sptext{
-    flex-basis: 70%;
+    flex-basis: 50%;
     margin-right: 30px;
 }
 
+/*---------------- FORUM --------------*/
+
+.postBt{
+    float:right;
+}
+
+.addPost{
+    width: 100%;
+}
+
+.row{
+    margin:auto;
+}
+
+.user{
+    font-style: bold;
+    color: black;
+}
+
+.time{
+    font-style: italic;
+    color:gray;
+}
+
+.userPost{
+    margin-top: 20px; 
+}
+
+.comments{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.container-forum{
+    margin : auto;
+    width: 70%;
+}
 
 /*---------------- TEST MENU ----------------*/
 #testMenu

@@ -1,35 +1,27 @@
-<?php 
-require('../database/init.php');
-$comment_content = $_POST ['comment'];
+<?php
+session_start();
+$dbh = new PDO('sqlite:sql/moodCoach.db');
+$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+$comment_content = $_POST['comment'];
+$user_cc = $_SESSION['cc_number'];
 
-function insertComment($comment_content, $username)
-{   
-    global $dbh;
-    $stmt = $dbh->prepare('INSERT INTO Comment(text_, user) VALUES (?, ?)');
-    $stmt->execute(array($comment_content, $username));
-    return $stmt-> lastInsertedId()
-}
-
-function getComment($lastId)
+function insertComment($comment_content, $username, $post_id)
 {
-    $stmt = $dbh->prepare('SELECT * FROM Comment');
-    $stmt->execute();
-    $commentInfo = $stmt->fetchAll();
-    return $commentInfo[$lastId];
+    global $dbh;
+    $stmt = $dbh->prepare('INSERT INTO Comment(text_, user, post_id) VALUES (?, ?, ?)');
+    $stmt->execute(array($comment_content, $user_cc, $post_id));
+    $id = $dbh->lastInsertID();
+    return $id;
 }
 
-if (isset ($_POST['post'])){
-    $lastId = insertComment($comment_content, $_SESSION['username']);
-    $commentInfo = getComment();
+
+if (isset ($_POST['commentBt']))
+{
+    try {
+        $lastCommentId = insertComment($comment_content, $user_cc, $_SESSION['lastId']);
+    } catch(PDOExecption $e) {
+    }
+    header('Location:templates/forum_tpl.php');
 }
-
-?> 
-
-<html>
-    <fieldset>
-        <legend> <?php echo $commentInfo['user']?></legend>
-        <textarea name="" id="" cols="30" rows="10">
-            <?php echo $commentInfo['text_']?>
-        </textarea>  
-    </fieldset> 
-</html>
+?>

@@ -52,7 +52,7 @@ $_SESSION['page'] = 'home'; ?>
                 <?php if($_SESSION['usertype'] == 0)    // Patient Navigation Bar
                 { ?>
                     <a <?php if($_SESSION['page'] == 'test'){ ?> class = "active" <?php } ?> href = "../testMenu.php">Tests</a>
-                    <a <?php if($_SESSION['page'] == 'org'){ ?> class = "active" <?php } ?> href = "../templates/support_tpl.php">Organizations</a>
+                    <a <?php if($_SESSION['page'] == 'org'){ ?> class = "active" <?php } ?> href = "../templates/support_tpl.php">Support and Organizations</a>
                 <?php } 
                 
                 else                                    // Health Professional Navigation Bar
