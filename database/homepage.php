@@ -28,7 +28,7 @@ $_SESSION['page'] = 'home'; ?>
         <!-- About Us Section -->
         <div class = "main">
             <h1>About Us</h1>
-            <p>O projeto em questão foi desenvolvido no âmbito da Unidade Curricular de <b>ESIN</b> (<i>Engenharia de Sistemas de Informação</i>) durante o 1º semestre do ano letivo 2021/2022 pelos alunos <b>Ana Marta Dias</b> (<i>up201806879</i>), <b>Joana Martins</b>(<i>up201806234</i>) e <b>Pedro Sousa</b> (<i>up201806246</i>)</p>
+            <p>O projeto em questão foi desenvolvido no âmbito da Unidade Curricular de <b>ESIN</b> (<i>Engenharia de Sistemas de Informação</i>) durante o 1º semestre do ano letivo 2021/2022 pelos alunos <b>Ana Marta Dias</b> (<i>up201806879</i>), <b>Joana Martins</b>(<i>up201806234</i>) e <b>Pedro Sousa</b> (<i>up201806246</i>).</p>
             <p>Este website tem como principal intuito desenvolver um sistema de informação que permita, em simultâneo, armazenar dados relativos a pacientes de doenças mentais, diagnosticar, e melhorar a sua condição, através do acompanhamento do médico respetivo, que terá acesso aos dados registados ao longo do tempo.</p>
             <img class =" logoImg" src = "../images/cover_logo.jpg" alt = "Support Lines" height = "360" width = "640">
         </div>

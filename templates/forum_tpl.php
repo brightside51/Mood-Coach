@@ -7,7 +7,16 @@
     require('../database/getComment.php');
 ?>
 
-<html>   
+<html>
+
+    <!-- Page Information and Style -->
+    <head>
+        <meta charset = "utf-8">
+        <title>Mood Coach | Forum</title>
+        <meta name = "viewport"
+        content = "width=device-width, initial-scale=1">
+    </head>
+
     <body>
         <div class= "container-forum"> 
             <b><h1 class = "forum">Forum</h1></b>

@@ -13,3 +13,13 @@
   include('../templates/testMenu_tpl.php');
   include('../templates/footer_tpl.php');
 ?>
+
+<html>
+  <!-- Page Information and Style -->
+  <head>
+      <meta charset = "utf-8">
+      <title>Mood Coach | Test Menu</title>
+      <meta name = "viewport"
+      content = "width=device-width, initial-scale=1">
+  </head>
+</html>

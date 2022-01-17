@@ -8,6 +8,34 @@ body{
     margin: 0; background-color: #ddd;
 }
 
+/* Page Header/Title + Logo Class */
+.header
+{
+    width: 100%; height: 150px;
+    font: normal 'Bitter', Arial;
+    padding: 50px;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    flex-direction: column;
+    text-align: center; color: white; background: #008080;
+}
+.header h1 {font-size: 40px;}
+
+/* Homepage Contents */
+.main
+{   display: flex; 
+    flex-direction: column; 
+    overflow: auto;
+    font-size: 20px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: justify;
+    padding: 0 0 55px; 
+    margin-left: 50px; 
+    margin-right: 50px;
+    background-color: #ddd;
+}
+
 /* Top Navigation Bar*/
 .navbar
 {   overflow: hidden; 
@@ -17,11 +45,17 @@ body{
 {   
     float: left; 
     text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     display: block; 
     padding: 14px 20px;
-    font: normal 20px 'Bitter', serif;
+    font-size: 20px;
     color: white;
     text-decoration: none;
+}
+#fill {
+    background-image: url('../images/cover_nav.jpg');
+    background-position: center;
+    color:rgba(255, 255, 255, 0);
 }
 .navbar a.right{float: right;}
 .navbar a.hover{background-color: #ccc;}
@@ -30,8 +64,8 @@ body{
 /* User Type Navigation Bar*/
 .usertype{width: 100%; overflow: hidden; background-color: #ccc;}
 .usertype a
-{   float: right; padding: 12px; width: 50%;
-    font: normal 15px 'Bitter', serif; text-align: center;
+{   float: right; padding: 12px; width: 50%; text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;    
     color: white; text-decoration: none;}
 .usertype a.hover{background-color: #ddd;}
 .usertype a.active{background-color: #008080;}
@@ -57,6 +91,93 @@ body{
     align-items: center; margin-left: 250px;
     margin-bottom: 30px; margin-top: 30px;
 }
+
+/* ------- Form Style -------- */
+
+.form-style
+{   width:450px; padding:30px; margin:40px auto;
+	border-radius: 10px; -webkit-border-radius:10px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13); -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+    background: #ddd;}
+
+.form-style .inner-wrap
+{   padding: 30px; margin-bottom: 15px;
+	background: #ccc; border-radius: 6px;
+}
+
+.form-style h1
+{
+	background: #008080; font: normal 30px 'Bitter', serif;
+	margin: -30px -30px 30px -30px; padding: 20px 30px 15px 30px;
+	border: 1px solid #257C9E; border-radius: 10px 10px 0 0; -webkit-border-radius: 10px 10px 0 0;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+	box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17); -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+}
+
+.form-style h1 > span
+{
+	display: block; margin-top: 2px;
+	font: 13px Arial, Helvetica, sans-serif; color: red;
+}
+
+
+.form-style label
+{
+	display: block; margin-bottom: 15px;
+	font: 13px Arial, Helvetica, sans-serif; color: #888;
+}
+
+.form-style input[type = "text"],
+.form-style input[type = "email"],
+.form-style input[type = "number"],
+.form-style input[type = "time"],
+.form-style input[type = "password"],
+.form-style input[type = "date"],
+.form-style input[type = "radio"],
+.form-style textarea,
+.form-style select {
+	display: block; width: 100%; padding: 8px;
+	box-sizing: border-box; -webkit-box-sizing: border-box;
+	border: 2px solid #fff; border-radius: 6px; -webkit-border-radius:6px;
+	box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33); -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);}
+
+input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{
+	-webkit-appearance: none; margin: 0;}
+input + span{padding-right: 30px;}
+
+/*
+input:invalid+span:after{position: absolute; content: 'X'; padding-left: 5px;}
+input:valid+span:after{position: absolute; content: '✓'; padding-left: 5px;}
+*/
+            
+.form-style .section
+{	font: normal 20px 'Bitter', serif; margin-bottom: 5px;
+	color: #008080; padding-left: 50px;}
+
+.form-style .section span
+{	background: #008080;
+	position: absolute; padding: 5px 10px 5px 10px;
+	border: 4px solid #fff; border-radius: 50%; -webkit-border-radius: 50%;
+	font-size: 14px; color: #fff;
+	margin-left: -45px; margin-top: -3px;}
+
+.form-style-10 input[type="button"],
+.form-style input[type="submit"]
+{	background: #008080; color: #fff;
+	font: normal 30px 'Bitter', serif; font-size: 15px;
+	border: 1px solid #257C9E; border-radius: 5px; -webkit-border-radius: 5px;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12); -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+	padding: 8px 20px 8px 20px; box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);}
+
+.form-style-10 input[type="button"]:hover,
+.form-style input[type="submit"]:hover{
+	background: #2A6881;
+	box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28); -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);}
+
+.form-style .privacy-policy{
+	float: right; font: 12px Arial, Helvetica, sans-serif; color: #4D4D4D;
+	width: 250px; margin-top: 10px; text-align: right;}
+
 
 /* ------- Support Style ------ */
 
@@ -246,8 +367,11 @@ body{
     text-align: center;
     color: #333;
 
-    font-size: 2em;
-    font-family: 'Times New Roman', Times, serif;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    font-size: 2.5em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 progress
@@ -310,7 +434,7 @@ progress::-webkit-progress-value
     border-width : 2px 2px 2px 2px;
     
     font-weight: bold;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 1.5em;
 }
 
@@ -339,7 +463,7 @@ progress::-webkit-progress-value
     padding: 1em;
 
     font-weight: bold;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 1.5em;
 }
 
@@ -367,7 +491,7 @@ progress::-webkit-progress-value
     padding: 1em;
 
     font-weight: bold;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 1.5em;
 }
 
@@ -378,20 +502,29 @@ progress::-webkit-progress-value
     display: flex; 
     flex-direction: column; 
     overflow: auto;
+    text-align: justify;
 
-    padding: 25px 50px 50px 50px;
+    padding: 25px 100px 50px 100px;
     background-color: #ddd;
+    color: #333;
 
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#testForm div
+{
+    margin-bottom: 50px;
 }
 
 .sendTest
 {
     display: block;
 
-    justify-content: center;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 50px;
 
-    width: 200px;
+    width: 500px;
     height: 100px;
     background: #008080;
 
@@ -404,18 +537,11 @@ progress::-webkit-progress-value
     border-style: solid;
     border-width : 2px 2px 2px 2px;
 
-    margin: 2em;
-    padding: 50px;
-
     font-weight: bold;
     font-size: 2em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-input[type = radio]
-{
-    display: grid;
-    place-content: center;
-}
 
 /* ------------- TEST RESULTS ------------ */
 .results
@@ -426,6 +552,7 @@ input[type = radio]
     justify-content: center;
 
     margin-bottom: 100px;
+    color: #333;
 }
 
 .results h1
@@ -435,7 +562,7 @@ input[type = radio]
 
     font-weight: bold;
     font-size: 2.5em;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .testResults
@@ -460,14 +587,14 @@ input[type = radio]
 
     font-weight: bold;
     font-size: 1.8em;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .testResults li
 {
     margin-bottom: 50px;
 
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 1.2em;
 }
 
@@ -477,5 +604,111 @@ input[type = radio]
 }
 
 /* ----------- FEEDBACK ----------- */
+.feedbackDisp
+{
+    display: flex;
+    
+    flex-direction: column;
+    justify-content: center;
 
-/* ---------- TEST MENU ----------- */
+    margin-bottom: 100px;
+    color: #333;
+}
+
+.feedbackDisp h1
+{
+    text-align: center;
+    padding-top: 25px;
+
+    font-weight: bold;
+    font-size: 2.5em;
+}
+
+.feedbackDisp table, th, td
+{
+    border: 2px solid #008080;
+    border-collapse: collapse;
+
+    margin-top: 25px; margin-bottom: 25px;
+    margin-right: 100px; margin-left: 100px;
+
+    text-align: center;
+    padding: 10px;
+}
+
+.feedbackDisp th
+{
+    font-size: 1.4em;
+    text-decoration: bold;
+}
+
+.feedbackDisp td
+{
+    font-size: 1.2em;
+}
+
+/* -------- COMPLETED TEST --------- */
+
+.testCompleted
+{
+    display: flex;
+    
+    flex-direction: column;
+    justify-content: center;
+
+    margin-bottom: 100px;
+    color: #333;
+}
+
+.testCompleted h1
+{
+    text-align: center;
+    padding-top: 25px;
+    font-size: 2.5em;
+}
+
+.testCompleted h3
+{
+    text-align: center;
+    font-size: 2em;
+}
+
+.testCompleted a.feedbackButton
+{
+    text-align: center;
+    margin: auto;
+}
+
+/* ----------- NO MORE TESTS TO PERFORM ----------- */
+
+#testMenu h3
+{
+    text-align: center;
+    font-size: 2em;
+
+    padding-top: 25px;
+    color: #333;
+}
+
+.completedButtons
+{
+    display: flex;
+
+    justify-content: center;
+
+    margin: 2em;
+    padding: 1em;
+}
+
+/* ------ NO TEST SUBMITTED PATIENT ----- */
+.results a.testButton
+{
+    text-align: center;
+    margin: auto;
+}
+
+.feedbackDisp a.testButton
+{
+    text-align: center;
+    margin: auto;
+}

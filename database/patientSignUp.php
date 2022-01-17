@@ -18,6 +18,8 @@
         <meta name = "viewport"
         content = "width=device-width, initial-scale=1">
 
+        <!-- CSS Style -->
+        <link rel = "stylesheet" type = "text/css" href = "../css/styleSheet.css">
     </head>
 
     <!---------------------------------------------------->
@@ -27,7 +29,7 @@
 
         <!-- Navigation Bar + User Type Changer -->
         <?php include('../templates/signUpHeader_tpl.php');
-        require('hpList.php'); ?>
+        require('userList.php'); $hpList = getHPList(); ?>
 
         <!---------------------------------------------------->
 
@@ -81,14 +83,12 @@
                     <input type = "number" id = "health_number" name = "health_number"
                     min = "10000000" max = "99999999" required/></label>
 
-                    <?php foreach($hpList as $hp){echo $hp['name_'];}?>
-
                     <!-- Health Professional Input -->
                     <label for = "doctor">Responsible Medical Professional
                     <input type = "text" id = "doctor" name = "doctor" list = "hpList" required></input></label>
                     <datalist id = "hpList">
-                    <?php foreach($hpList as $hp){ ?>
-                        <option value = <?php echo $hp['name_']; ?>>
+                    <?php foreach($hpList as $hp){
+                        echo '<option value = "' . $hp['name_'] . '">' . '</option>'; ?>
                     <?php } ?>
                     </datalist>
                 </div>

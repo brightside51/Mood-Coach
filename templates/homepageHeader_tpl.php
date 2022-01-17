@@ -2,16 +2,10 @@
 
 <!DOCTYPE html>
 <html lang = "EN-US">
-    <head>
-        <meta charset = "UTF-8">
-        <title>Mood Coach | Homepage Header Template</title>
 
-        <!-- CSS Styling -->
-        <link rel = "stylesheet" type = "text/css" href = "../css/general_style.css">
-        <link rel = "stylesheet" type = "text/css" href = "../css/main_style.css">
-        <link rel = "stylesheet" href = "//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-
-    </head>
+    <!-- CSS Styling -->
+    <link rel = "stylesheet" type = "text/css" href = "../css/styleSheet.css">
+    <link rel = "stylesheet" href = "//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
     <body>
 
@@ -38,7 +32,7 @@
         
         <!-- Navigation Bar -->
         <div class = "navbar">
-            <a <?php if($_SESSION['page'] == 'home'){ ?> class = "active" <?php } ?> href = "../database/homepage.php"><img src = '../images/cover1.jpg'></a>
+            <a id = "fill" <?php if($_SESSION['page'] == 'home'){ ?> class = "active" <?php } ?> href = "../database/homepage.php">Home</a>
             
             <?php if(isset($_SESSION['cc_number']))            // Clause: Session already Started
             { ?>
@@ -54,7 +48,7 @@
                 
                 else                                    // Health Professional Navigation Bar
                 { ?>
-                    <a <?php if($_SESSION['page'] == 'patientList'){ ?> class = "active" <?php } ?> href = "../tos.html">Patient List</a>
+                    <a <?php if($_SESSION['page'] == 'patientList'){ ?> class = "active" <?php } ?> href = "../database/patientList.php">Patient List</a>
                 <?php ; }
             }
 

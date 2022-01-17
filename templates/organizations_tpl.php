@@ -5,27 +5,36 @@
     require('../database/supportInfo.php');  
 ?>
 <html>
-<body>
-    <div>
-        <h2 class = "page_title" > Support and Organizations > Organizations</h2>
-    </div>
-    <div class = "container">
-        <ul>
-        <?php foreach($organization as $org){ ?>
-        <div class = "item1">
-            <li>
-            <div class = "">
-                <h4><a class="supportLinks" href=<?php echo $org['website'] ?>><?php echo $org['name_']?></a></h4>
-                <p>Tel: <?php echo $org['contact_tel']?> </p>
-                <p>E-mail: <?php echo $org['contact_email']?></p>
-            </div>
-            <div>
-                <img class="<?php echo $org['name_']?>" src="../images/<?php echo $org['name_']?>.jpg" alt="<?php echo $org['name_']?>">
+
+    <!-- Page Information and Style -->
+    <head>
+        <meta charset = "utf-8">
+        <title>Mood Coach | Organizations</title>
+        <meta name = "viewport"
+        content = "width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+        <div>
+            <h2 class = "page_title" > Support and Organizations > Organizations</h2>
+        </div>
+        <div class = "container">
+            <ul>
+            <?php foreach($organization as $org){ ?>
+            <div class = "item1">
+                <li>
+                <div class = "">
+                    <h4><a class="supportLinks" href=<?php echo $org['website'] ?>><?php echo $org['name_']?></a></h4>
+                    <p>Tel: <?php echo $org['contact_tel']?> </p>
+                    <p>E-mail: <?php echo $org['contact_email']?></p>
+                </div>
+                <div>
+                    <img class="<?php echo $org['name_']?>" src="../images/<?php echo $org['name_']?>.jpg" alt="<?php echo $org['name_']?>">
+                </div>    
+                </li>   
+            <?php }?>    
             </div>    
-            </li>   
-        <?php }?>    
-        </div>    
-    </ul>   
-    </div>
-</body>     
+        </ul>   
+        </div>
+    </body>     
 </html>

@@ -12,7 +12,7 @@
     }
     else
     {?>
-        <h1><?php echo "{$_SESSION['name']} | Feedback History"?></h1>
+        <h1><?php echo "{$_SESSION['name']} | Feedback History"?></h1><br/>
     <table>
         <tr>
             <th>Test No.</th>
