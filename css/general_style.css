@@ -3,7 +3,11 @@
 *{box-sizing: border-box;}
 
 /* Body Style */
-body{font-family: Arial, Helvetica, sans-serif; margin: 0;}
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+    margin: 0;
+    background-color: #DDD;
+}
 
 /* Top Navigation Bar*/
 .navbar
@@ -63,24 +67,24 @@ body{font-family: Arial, Helvetica, sans-serif; margin: 0;}
 
 .page_title{
     padding: 0 0 0px; margin-left: 70px; padding-right: 50px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 25px;
 }
 
 .container {
+    background-color: #DDD;
     display: flex;
-    align-items: center;
-    box-sizing: content-box;
-    margin-left: 50px;
+    vertical-align: center;
+    align-content: center;
     margin : auto;
-    width: 50%;
-  }
+    width: 80%;
+    margin-bottom: 70px;
+}
 
-/* .supportImg{
-    flex-basis: 50%;
-    margin-top: 50px;
-    margin-right: 50px;
-} */
+.supportImg{
+    margin-left: 125px;
+    align-items: center;
+}
 
 .orgImg{
     flex-basis: 50%;
@@ -93,34 +97,63 @@ body{font-family: Arial, Helvetica, sans-serif; margin: 0;}
 
 .support{
     font-size: 20px;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: justify;
     margin-right: 50px;
     margin-bottom: 50px;
 }
 
 #sptext{
-    flex-basis: 50%;
-    margin-right: 30px;
+    margin-right: 40px;
+    margin-left: 50px;
 }
 
 /*---------------- FORUM --------------*/
 
+.container-forum{
+    background-color: #DDD;
+    border-width: 4px;
+    border-color: #008080;
+    border-style: solid;
+    border-radius:5px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 80%;
+    margin-top: 20px;
+    margin-bottom: 70px;
+}
+
+.userPost{
+    margin-left: 70px;
+    margin-right: 70px;
+}
+
 .postBt{
+    margin-top:5px;
+    background-color: #008080;
+    border-color: #008080;
+    color: white;
     float:right;
+    width: 20%;
 }
 
-.addPost{
+#addPost{
     width: 100%;
+    height: 70px;
+    border-color: #008080;
+    text-align: left;
+    padding-left: 10px;
+    font-size: 20px;
 }
 
-.row{
-    margin:auto;
+#addComment{
+    width: 100%;
 }
 
 .user{
     font-style: bold;
     color: black;
+    margin-top:20px;
 }
 
 .time{
@@ -128,18 +161,23 @@ body{font-family: Arial, Helvetica, sans-serif; margin: 0;}
     color:gray;
 }
 
-.userPost{
-    margin-top: 20px; 
+
+.post{
+    margin-top:20px;
 }
 
 .comments{
-    margin-top: 20px;
+    margin-bottom: 20px;
     margin-left: 20px;
 }
 
-.container-forum{
+.container-post{
+    border-width: 1px;
+    border-color: #008080;
+    border-style: solid;
+    border-radius:2px;
     margin : auto;
-    width: 70%;
+    width: 100%;
 }
 
 /*---------------- TEST MENU ----------------*/

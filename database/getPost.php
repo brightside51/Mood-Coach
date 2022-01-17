@@ -1,5 +1,5 @@
 <?php
-require('../database/init.php');
+require_once('../database/init.php');
 
 function getPost()
 {
@@ -11,3 +11,4 @@ function getPost()
 }
 
 $postInfo = getPost();
+?>

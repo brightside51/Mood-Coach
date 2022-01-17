@@ -1,6 +1,6 @@
-<?php    
-    include('homepageHeader_tpl.php');
+<?php
     $_SESSION['page'] = 'org';
+    include('homepageHeader_tpl.php');
     include('footer_tpl.php');
     require('../database/supportInfo.php');  
 ?>

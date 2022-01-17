@@ -1,5 +1,6 @@
 <?php
-require('../database/init.php');
+require_once('../database/init.php');
+/* $post_id = $_POST['post_id']; */
 
 function getComment()
 {
@@ -11,3 +12,4 @@ function getComment()
 }
 
 $commentInfo = getComment();
+/* print_r($commentInfo); */

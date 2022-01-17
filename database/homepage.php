@@ -1,4 +1,5 @@
-<?php session_start(); ?>
+<?php session_start(); 
+$_SESSION['page'] = 'home';?>
 
 <!-- Home Page -->
 <!-- http://localhost:8080/moodcoach/database/homepage.php -->

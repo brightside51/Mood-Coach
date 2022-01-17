@@ -1,5 +1,4 @@
-<?php session_start();
-$_SESSION['page'] = 'home'; ?>
+<?php session_start(); ?>
 
 <!DOCTYPE html>
 <html lang = "EN-US">

@@ -159,6 +159,7 @@ CREATE TABLE Post (
 
     -- Foreign Key referring to the User who creates the post
     user INTEGER NOT NULL,          -- Any type of User can create a Post
+    username TEXT,
     createdOn DATETIME,
     FOREIGN KEY (user) references User(cc_number) ON DELETE CASCADE ON UPDATE CASCADE
     -- If the User is deleted, then this foreign key will automatically be deleted as well   
@@ -173,6 +174,7 @@ CREATE TABLE Comment (
 
     -- Foreign Keys referring to the Post and the User who commented
     user INTEGER NOT NULL,          -- Any type of User can create a Comment
+    username TEXT,
     post_id INTEGER NOT NULL,       -- More than 1 Comment can be published on the same Post
     createdOn DATETIME,
     FOREIGN KEY (user) references User(cc_number) ON DELETE CASCADE ON UPDATE CASCADE
