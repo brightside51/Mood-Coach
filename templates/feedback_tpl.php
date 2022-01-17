@@ -1,4 +1,4 @@
-<section>
+<section class = feedbackDisp>
     
     <?php
     // Get All Feedbacks Available in the Database

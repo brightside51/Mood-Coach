@@ -11,8 +11,8 @@
             </progress>
             <div>
                 <h3>Check all your results and feedback below</h3>
-                <a class = weekButton href = "weeklyResults.php">Weekly Results</a>
-                <a class = feedbackButton href = "previousFeedback.php">Previous Feedback</a>
+                <a class = resultsButton href = "testResults.php">Test Results</a>
+                <a class = feedbackButton href = "feedback.php">Feedback</a>
             </div>
         <?php }
 
@@ -25,8 +25,8 @@
             
             <div class = menuButtons>
                 <a class = testButton href = "testForm.php">Start Test</a>
-                <a class = weekButton href = "weeklyResults.php">Weekly Results</a>
-                <a class = feedbackButton href = "previousFeedback.php">Previous Feedback</a>
+                <a class = resultsButton href = "testResults.php">Test Results</a>
+                <a class = feedbackButton href = "feedback.php">Feedback</a>
             </div>
         <?php }
         ?>
