@@ -40,7 +40,7 @@
         
         <!-- Navigation Bar -->
         <div class = "navbar">
-            <a <?php if($_SESSION['page'] == 'home'){ ?> class = "active" <?php } ?> href = "../database/homepage.php"><img src = '../images/cover1.jpg'></a>
+            <a <?php if($_SESSION['page'] == 'home'){ ?> class = "active" <?php } ?> href = "../database/homepage.php"><img id = "logo" src = '../images/cover2.jpg'></a>
             
             <?php if(isset($_SESSION['cc_number']))            // Clause: Session already Started
             { ?>

@@ -1,3 +1,5 @@
+
+
 .form-style
 {   width:450px; padding:30px; margin:40px auto;
 	border-radius: 10px; -webkit-border-radius:10px;
@@ -6,11 +8,9 @@
 
 .form-style .inner-wrap
 {   padding: 30px; margin-bottom: 15px;
-	background: #ccc; border-radius: 6px;
-}
+	background: #ccc; border-radius: 6px;}
 
-.form-style h1
-{
+.form-style h1{
 	background: #008080; font: normal 30px 'Bitter', serif;
 	margin: -30px -30px 30px -30px; padding: 20px 30px 15px 30px;
 	border: 1px solid #257C9E; border-radius: 10px 10px 0 0; -webkit-border-radius: 10px 10px 0 0;
@@ -19,24 +19,21 @@
 }
 
 .form-style h1 > span
-{
-	display: block; margin-top: 2px;
-	font: 13px Arial, Helvetica, sans-serif; color: red;
-}
-
+{	display: block; margin-top: 2px;
+	font: 13px Arial, Helvetica, sans-serif; color: red;}
 
 .form-style label
-{
-	display: block; margin-bottom: 15px;
-	font: 13px Arial, Helvetica, sans-serif; color: #888;
-}
+{	display: block; margin-bottom: 15px;
+	font: 13px Arial, Helvetica, sans-serif; color: #888;}
 
-.form-style input[type = "text"],
-.form-style input[type = "email"],
-.form-style input[type = "number"],
-.form-style input[type = "time"],
-.form-style input[type = "password"],
-.form-style input[type = "radio"],
+.form-style input[type="text"],
+.form-style input[type="date"],
+.form-style input[type="datetime"],
+.form-style input[type="email"],
+.form-style input[type="number"],
+.form-style input[type="search"],
+.form-style input[type="time"],
+.form-style input[type="password"],
 .form-style textarea,
 .form-style select {
 	display: block; width: 100%; padding: 8px;

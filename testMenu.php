@@ -1,15 +1,15 @@
 <?php
-  session_start();  
+// Database Related
+$test_count = 1;
 
-  require_once('database/test.php');
+/* IF TIME ALLOWS, ADD DATES!
+https://stackoverflow.com/questions/10469037/subtracting-two-dates-in-php 
+date_default_timezone_set('UTC');
+$date = date('jS \of F Y h:i:s A');
+*/
 
-  $username = $_SESSION['cc_number'];
-
-  $test_count = getPreviousTestCount($username);
-  $_SESSION['test_count'] = $test_count;
-  
-  // Template Related
-  include('templates/homepageHeader_tpl.php');
-  include('templates/testMenu_tpl.php');
-  include('templates/footer_tpl.php');
+// Template Related
+include('templates/homepageHeader_tpl.php');
+include('templates/testMenu_tpl.php');
+include('templates/footer_tpl.php');
 ?>

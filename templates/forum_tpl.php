@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $_SESSION['page'] = 'forum';
     include('homepageHeader_tpl.php');
     include('footer_tpl.php');
@@ -9,7 +10,7 @@
 <html>   
     <body>
         <div class= "container-forum"> 
-            <h1 class = "page_title"> Forum </h1>
+            <b><h1 class = "forum">Forum</h1></b>
             <br>
             <div class = "userPost"> 
                 <form method = "post" action = "../action_post.php"> 
@@ -17,7 +18,7 @@
                     <input type="submit" class = "postBt" name = "postBt" value = "Add Post">
                 </form>
             </div>
-            <div class="userPost">
+            <div class="userPost">          
                 <?php foreach($postInfo as $pI){?>
                 <div>
                     <div class="post">
@@ -45,7 +46,7 @@
                                             <b><?php echo($cI['username'])?></b>
                                             <span class = "time"><?php echo($cI['createdOn'])?></span>
                                         </div>
-                                        <div class = "userPost">
+                                        <div class = "container-post">
                                             <?php echo($cI['text_'])?>
                                         </div>
                                     </div>

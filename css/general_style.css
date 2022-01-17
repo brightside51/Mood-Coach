@@ -24,6 +24,8 @@ body{
     color: white; 
     text-decoration: none;
 }
+
+#logo{margin-top: -400px; /* width: 20px; height:20px; */}
 .navbar a.right{float: right;}
 .navbar a.hover{background-color: #ddd;}
 .navbar a.active{background-color: #ccc;}
@@ -69,16 +71,18 @@ body{
     padding: 0 0 0px; margin-left: 70px; padding-right: 50px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 25px;
+    margin-top: 50px;
 }
 
 .container {
     background-color: #DDD;
-    display: flex;
+    display:flex;
     vertical-align: center;
     align-content: center;
     margin : auto;
     width: 80%;
     margin-bottom: 70px;
+    font-size: 25px;
 }
 
 .supportImg{
@@ -86,13 +90,32 @@ body{
     align-items: center;
 }
 
-.orgImg{
-    flex-basis: 50%;
-    padding-top: 50px;
-    margin-left: 100px;
-    /*float:right;*/
-    height:auto;
-    width:auto;
+.item1{
+    margin-bottom: 20px;
+}
+
+.container-org{
+    background-color: #DDD;
+    width: 80%;
+    margin:auto;
+    text-align: left;
+    padding-left: 20px;
+    font-size: 23px;
+    margin-bottom:70px;
+}
+
+.FNERDM{
+    flex: auto;
+    display: flex;
+    height: 150px;
+    width: 330px;
+    border-radius: 5px;
+}
+
+.ADEB{
+    flex: auto;
+    display: flex;
+    border-radius: 5px;
 }
 
 .support{
@@ -111,9 +134,9 @@ body{
 /*---------------- FORUM --------------*/
 
 .container-forum{
-    background-color: #DDD;
+    background-color: #008080;
     border-width: 4px;
-    border-color: #008080;
+    border-color: #022525;
     border-style: solid;
     border-radius:5px;
     margin-right: auto;
@@ -128,37 +151,68 @@ body{
     margin-right: 70px;
 }
 
+.forum{
+    color: #022525;
+    font-size: 25px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-left: 70px;
+    margin-top: 10px;
+}
+
 .postBt{
     margin-top:5px;
-    background-color: #008080;
-    border-color: #008080;
-    color: white;
-    float:right;
+    background-color: #DDD;
+    border-color: #022525;
+    color: #022525;
+    /* float:right; */
     width: 20%;
+    margin-bottom: 10px;
 }
 
 #addPost{
     width: 100%;
     height: 70px;
-    border-color: #008080;
+    border-color: #022525;
     text-align: left;
     padding-left: 10px;
     font-size: 20px;
+    margin-bottom: 5px;
 }
 
 #addComment{
     width: 100%;
+    border-color: #022525;
+    text-align: left;
+    margin-top: 10px;
+    padding-left: 10px;
+    font-size: 15px;
+}
+
+.container-post{
+    border-width: 2px;
+    border-color: #022525;
+    background-color: #DDD;
+    border-style: solid;
+    border-radius:2px;
+    margin : auto;
+    width: 100%;
+    text-align: left;
+    /* margin-top: 10px; */
+    margin-bottom: 10px;
+    padding-left: 10px;
+    font-size: 15px;
+    height: auto;
 }
 
 .user{
     font-style: bold;
-    color: black;
+    color: white;
     margin-top:20px;
 }
 
 .time{
     font-style: italic;
-    color:gray;
+    color:rgb(192, 189, 189);
 }
 
 
@@ -171,14 +225,7 @@ body{
     margin-left: 20px;
 }
 
-.container-post{
-    border-width: 1px;
-    border-color: #008080;
-    border-style: solid;
-    border-radius:2px;
-    margin : auto;
-    width: 100%;
-}
+
 
 /*---------------- TEST MENU ----------------*/
 #testMenu
@@ -266,7 +313,7 @@ progress::-webkit-progress-value
     font-size: 1.5em;
 }
 
-.resultsButton
+.weekButton
 {
     display: flex;
 
@@ -330,102 +377,8 @@ progress::-webkit-progress-value
     display: flex; 
     flex-direction: column; 
     overflow: auto;
-
-    padding: 25px 50px 50px 50px;
+    padding: 0 0 55px; 
+    padding-left: 50px; 
+    padding-right: 50px;
     background-color: #ddd;
-
-    font-family: 'Times New Roman', Times, serif;
 }
-
-.sendTest
-{
-    display: block;
-
-    justify-content: center;
-
-    width: 200px;
-    height: 100px;
-    background: #008080;
-
-    text-align: center;
-    text-decoration: none;
-    color: white;
-
-    border-radius: 5px;
-    border-color: white;
-    border-style: solid;
-    border-width : 2px 2px 2px 2px;
-
-    margin: 2em;
-    padding: 50px;
-
-    font-weight: bold;
-    font-size: 2em;
-}
-
-input[type = radio]
-{
-    display: grid;
-    place-content: center;
-}
-
-/* ------------- TEST RESULTS ------------ */
-.results
-{
-    display: flex;
-    
-    flex-direction: column;
-    justify-content: center;
-
-    margin-bottom: 100px;
-}
-
-.results h1
-{
-    text-align: center;
-    padding-top: 25px;
-
-    font-weight: bold;
-    font-size: 2.5em;
-    font-family: 'Times New Roman', Times, serif;
-}
-
-.testResults
-{
-    background-color: #DDD;
-
-    padding: 10px;
-    margin-top: 25px; margin-bottom: 25px;
-    margin-right: 50px; margin-left: 50px;
-
-    border-width: 5px;
-    border-color: #008080;
-    border-style: solid;
-    border-radius: 10px;
-}
-
-.testResults h3
-{
-    text-align: center;
-
-    color: rgb(235, 120, 135);
-
-    font-weight: bold;
-    font-size: 1.8em;
-    font-family: 'Times New Roman', Times, serif;
-}
-
-.testResults li
-{
-    margin-bottom: 50px;
-
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 1.2em;
-}
-
-.testResults h4
-{
-    margin-bottom: 5px;
-}
-
-/* ----------- FEEDBACK ----------- */

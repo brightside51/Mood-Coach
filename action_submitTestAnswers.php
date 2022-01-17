@@ -1,29 +1,20 @@
 <?php
 
-    session_start();
-    require_once('database/test.php');
+// Post test answers into the database
+$answers = $_POST['test_answers'];
+$qid = generateQuestionID($test_id);
+postGivenAnswers($answers, $qid);
 
-    // Post test answers into the database
-    $test_count = $_SESSION['test_count'];
-    $test_id = getTestID($test_count);
-    
-    $answers = $_POST['test_answers'];
-    $username = $_SESSION['cc_number'];
+header('Location: testCompleted.php');
 
-    $qid = generateQuestionID($test_id);
-    $ans_id = generateAnswerID($qid, $test_id, $username);
-    $patientArray = generatePatientArray($username);
+/*
+// Save date of the first test of the week
+if($test_count == 0)
+{
+    $firsttestofweek = date('Y-m-d');
+}
 
-    for($i = 0; $i < 20; $i++)
-    {
-        postGivenAnswers($ans_id[$i], $answers[$i], $patientArray[$i], $qid[$i]);
-    }
-
-    // Update Test Count
-    $test_count = $test_count + 1;
-    $_SESSION['test_count'] = $test_count;
-    updateTestCount($test_count, $username);    // Update on the Database
-
-    header('Location: testCompleted.php');
-
+// Count Another Completed Test
+$test_count++;
+*/
 ?>

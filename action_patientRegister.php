@@ -13,7 +13,6 @@
     $date_birth = $_POST['birthdate'];
     $address = $_POST['address'];
     $usertype = $_SESSION['sel_usertype'];
-    $_SESSION['test_count'] = 0;
     $_SESSION['usertype'] = 0;
 
     // SQLite Database Access
