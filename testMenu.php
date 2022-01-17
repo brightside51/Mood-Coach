@@ -1,6 +1,6 @@
 <?php
   session_start();  
-
+  $_SESSION['page'] = 'test';
   require_once('database/test.php');
 
   $username = $_SESSION['cc_number'];

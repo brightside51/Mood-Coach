@@ -1,5 +1,5 @@
-<?php session_start();
-?>
+<?php session_start(); 
+$_SESSION['page'] = 'home'; ?>
 
 <!-- Home Page -->
 <!-- http://localhost:8080/moodcoach/database/homepage.php -->
@@ -13,6 +13,8 @@
         <title>Mood Coach | Homepage</title>
         <meta name = "viewport"
         content = "width=device-width, initial-scale=1">
+
+        <link rel = "stylesheet" type = "text/css" href = "../css/general_style.css">
     </head>
 
     <!---------------------------------------------------->
@@ -26,12 +28,9 @@
         <!-- About Us Section -->
         <div class = "main">
             <h1>About Us</h1>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-            <p>Insert Group Table Here</p>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+            <p>O projeto em questão foi desenvolvido no âmbito da Unidade Curricular de <b>ESIN</b> (<i>Engenharia de Sistemas de Informação</i>) durante o 1º semestre do ano letivo 2021/2022 pelos alunos <b>Ana Marta Dias</b> (<i>up201806879</i>), <b>Joana Martins</b>(<i>up201806234</i>) e <b>Pedro Sousa</b> (<i>up201806246</i>)</p>
+            <p>Este website tem como principal intuito desenvolver um sistema de informação que permita, em simultâneo, armazenar dados relativos a pacientes de doenças mentais, diagnosticar, e melhorar a sua condição, através do acompanhamento do médico respetivo, que terá acesso aos dados registados ao longo do tempo.</p>
+            <img class =" logoImg" src = "../images/cover_logo.jpg" alt = "Support Lines" height = "360" width = "640">
         </div>
 
         <!-- Footnotes/Footer -->

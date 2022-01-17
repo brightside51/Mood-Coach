@@ -1,5 +1,4 @@
-<?php session_start();
-$_SESSION['page'] = 'home'; ?>
+<?php session_start(); ?>
 
 <!DOCTYPE html>
 <html lang = "EN-US">
@@ -52,13 +51,12 @@ $_SESSION['page'] = 'home'; ?>
                 <?php if($_SESSION['usertype'] == 0)    // Patient Navigation Bar
                 { ?>
                     <a <?php if($_SESSION['page'] == 'test'){ ?> class = "active" <?php } ?> href = "../testMenu.php">Tests</a>
-                    <a <?php if($_SESSION['page'] == 'org'){ ?> class = "active" <?php } ?> href = "../templates/support_tpl.php">Organizations</a>
+                    <a <?php if($_SESSION['page'] == 'org'){ ?> class = "active" <?php } ?> href = "../templates/support_tpl.php">Support and Organizations</a>
                 <?php } 
                 
                 else                                    // Health Professional Navigation Bar
                 { ?>
                     <a <?php if($_SESSION['page'] == 'patientList'){ ?> class = "active" <?php } ?> href = "../tos.html">Patient List</a>
-                    <a href = "../tos.html">??</a>
                 <?php ; }
             }
 
