@@ -252,8 +252,41 @@ progress::-webkit-progress-value
     display: flex; 
     flex-direction: column; 
     overflow: auto;
-    padding: 0 0 55px; 
-    padding-left: 50px; 
-    padding-right: 50px;
+
+    padding: 25px 50px 50px 50px;
     background-color: #ddd;
+
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.sendTest
+{
+    display: block;
+
+    justify-content: center;
+
+    width: 200px;
+    height: 100px;
+    background: #008080;
+
+    text-align: center;
+    text-decoration: none;
+    color: white;
+
+    border-radius: 5px;
+    border-color: white;
+    border-style: solid;
+    border-width : 2px 2px 2px 2px;
+
+    margin: 2em;
+    padding: 50px;
+
+    font-weight: bold;
+    font-size: 2em;
+}
+
+input[type = radio]
+{
+    display: grid;
+    place-content: center;
 }
