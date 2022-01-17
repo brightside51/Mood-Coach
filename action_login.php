@@ -38,6 +38,7 @@
     {
         $_SESSION['cc_number'] = $cc_number;
         $usertype = $row['usertype']; $_SESSION['usertype'] = $usertype;
+        $test_count = $row['test_count']; $_SESSION['test_count'] = $test_count;
         $name = $row['name_']; $_SESSION['name'] = $name;
         
         // Redirecting the User back to Homepage

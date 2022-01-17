@@ -266,7 +266,7 @@ progress::-webkit-progress-value
     font-size: 1.5em;
 }
 
-.weekButton
+.resultsButton
 {
     display: flex;
 
@@ -330,8 +330,102 @@ progress::-webkit-progress-value
     display: flex; 
     flex-direction: column; 
     overflow: auto;
-    padding: 0 0 55px; 
-    padding-left: 50px; 
-    padding-right: 50px;
+
+    padding: 25px 50px 50px 50px;
     background-color: #ddd;
+
+    font-family: 'Times New Roman', Times, serif;
 }
+
+.sendTest
+{
+    display: block;
+
+    justify-content: center;
+
+    width: 200px;
+    height: 100px;
+    background: #008080;
+
+    text-align: center;
+    text-decoration: none;
+    color: white;
+
+    border-radius: 5px;
+    border-color: white;
+    border-style: solid;
+    border-width : 2px 2px 2px 2px;
+
+    margin: 2em;
+    padding: 50px;
+
+    font-weight: bold;
+    font-size: 2em;
+}
+
+input[type = radio]
+{
+    display: grid;
+    place-content: center;
+}
+
+/* ------------- TEST RESULTS ------------ */
+.results
+{
+    display: flex;
+    
+    flex-direction: column;
+    justify-content: center;
+
+    margin-bottom: 100px;
+}
+
+.results h1
+{
+    text-align: center;
+    padding-top: 25px;
+
+    font-weight: bold;
+    font-size: 2.5em;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.testResults
+{
+    background-color: #DDD;
+
+    padding: 10px;
+    margin-top: 25px; margin-bottom: 25px;
+    margin-right: 50px; margin-left: 50px;
+
+    border-width: 5px;
+    border-color: #008080;
+    border-style: solid;
+    border-radius: 10px;
+}
+
+.testResults h3
+{
+    text-align: center;
+
+    color: rgb(235, 120, 135);
+
+    font-weight: bold;
+    font-size: 1.8em;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.testResults li
+{
+    margin-bottom: 50px;
+
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2em;
+}
+
+.testResults h4
+{
+    margin-bottom: 5px;
+}
+
+/* ----------- FEEDBACK ----------- */
