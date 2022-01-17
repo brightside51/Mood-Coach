@@ -11,8 +11,8 @@
             </progress>
             <div>
                 <h3>Check all your results and feedback below</h3>
-                <a class = resultsButton href = "testResults.php">Test Results</a>
-                <a class = feedbackButton href = "feedback.php">Feedback</a>
+                <a class = resultsButton href = "../database/testResults.php">Test Results</a>
+                <a class = feedbackButton href = "../database/feedback.php">Feedback</a>
             </div>
         <?php }
 
@@ -24,9 +24,9 @@
             </progress>
             
             <div class = menuButtons>
-                <a class = testButton href = "testForm.php">Start Test</a>
-                <a class = resultsButton href = "testResults.php">Test Results</a>
-                <a class = feedbackButton href = "feedback.php">Feedback</a>
+                <a class = testButton href = "../database/testForm.php">Start Test</a>
+                <a class = resultsButton href = "../database/testResults.php">Test Results</a>
+                <a class = feedbackButton href = "../database/feedback.php">Feedback</a>
             </div>
         <?php }
         ?>

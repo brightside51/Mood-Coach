@@ -1,5 +1,7 @@
+<?php require_once('../database/test.php');?>
+
 <div class = "form-section gender" id = "testForm">
-    <form action = "action_submitTestAnswers.php" method = "post">
+    <form action = "../action_submitTestAnswers.php" method = "post">
         <ol>
             <?php
 

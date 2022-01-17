@@ -81,7 +81,7 @@
 
                 <!-- Login Information Section using Template -->
                 <div class="section"><span>3</span>Login Information</div>
-                <?php include('../templates/login_tpl.php') ?>
+                <?php include('../templates/login_tpl.php'); ?>
 
             </form>
         </div>
@@ -89,7 +89,7 @@
         <!---------------------------------------------------->
 
         <!-- Footnotes/Footer -->
-        <?php include('../templates/footer_tpl.php')?>
+        <?php include('../templates/footer_tpl.php'); ?>
 
     </body>
 </html>

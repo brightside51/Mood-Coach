@@ -36,6 +36,7 @@
 .form-style input[type = "number"],
 .form-style input[type = "time"],
 .form-style input[type = "password"],
+.form-style input[type = "date"],
 .form-style input[type = "radio"],
 .form-style textarea,
 .form-style select {

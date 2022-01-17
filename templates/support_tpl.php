@@ -5,6 +5,7 @@
     include('footer_tpl.php');
     require('../database/supportInfo.php');  
 ?>
+
 <html>  
 <body>
     <div>

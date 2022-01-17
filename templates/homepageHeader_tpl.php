@@ -34,8 +34,6 @@
                 {
                     echo "ESIN | Group G";
                 } ?></p>
-
-            <!-- <p class = "animated zoomIn">ESIN | Group G</p> -->   <!-- Welcome -->
         </div>
         
         <!-- Navigation Bar -->
@@ -50,7 +48,7 @@
 
                 <?php if($_SESSION['usertype'] == 0)    // Patient Navigation Bar
                 { ?>
-                    <a <?php if($_SESSION['page'] == 'test'){ ?> class = "active" <?php } ?> href = "../testMenu.php">Tests</a>
+                    <a <?php if($_SESSION['page'] == 'test'){ ?> class = "active" <?php } ?> href = "../database/testMenu.php">Tests</a>
                     <a <?php if($_SESSION['page'] == 'org'){ ?> class = "active" <?php } ?> href = "../templates/support_tpl.php">Support and Organizations</a>
                 <?php } 
                 

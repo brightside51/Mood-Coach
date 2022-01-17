@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require_once('database/test.php');
+    require_once('test.php');
 
     $username = $_SESSION['cc_number'];
     $username = intval($username);
@@ -17,7 +17,7 @@
     }
 
     // Template Related
-    include('templates/homepageHeader_tpl.php');
-    include('templates/testResults_tpl.php');
-    include('templates/footer_tpl.php');
+    include('../templates/homepageHeader_tpl.php');
+    include('../templates/testResults_tpl.php');
+    include('../templates/footer_tpl.php');
 ?>
