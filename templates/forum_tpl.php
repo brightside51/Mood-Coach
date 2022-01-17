@@ -1,61 +1,37 @@
 <?php
-    session_start();
-    $_SESSION['page'] = 'forum';
     include('homepageHeader_tpl.php');
+    $_SESSION['page'] = 'forum';
     include('footer_tpl.php');
-    require('../database/getPost.php');
-    require('../database/getComment.php');
+    require('../database/supportInfo.php');  
 ?>
-
 <html>   
     <body>
-        <div class= "container-forum"> 
-            <h1 class = "page_title"> Forum </h1>
-            <br>
-            <div class = "userPost"> 
-                <form method = "post" action = "../action_post.php"> 
-                    <input type="text" id = "addPost" name = "post" placeholder = "Add a post"> 
-                    <input type="submit" class = "postBt" name = "postBt" value = "Add Post">
-                </form>
+    <div class= "">
+        <h1> Forum </h1>
+        <fieldset>
+            <div>
+            <form action="action_post.php">
+                <label for="post">Post a quetion or thought</label>
+                <br>
+                <input type="text" id="" name = "post" require>
+                <input type="submit" value = "Post">           
+            </form>       
+            <fieldset>
+            <legend>Post <?php echo $postInfo['post_id']?></legend>
+            <div>
+                <textarea name="" id="" cols="30" rows="10">
+                <?php echo $postInfo['text_']?>
+            </textarea>              
             </div>
-            <div class="userPost">
-                <?php foreach($postInfo as $pI){?>
-                <div>
-                    <div class="post">
-                        <div class="user">
-                            <b><?php echo($pI['username'])?></b>
-                            <span class = "time"><?php echo($pI['createdOn'])?></span>
-                        </div>
-                        <div class = "container-post">
-                            <p><?php echo $pI['text_'];?></p>
-                        </div> 
-                        <div class = "comments">
-                            <div>
-                                <form method = "post" action="../action_comment.php">
-                                    <input type= "hidden" name = "post_id" value = "<?php echo($pI['post_id'])?>">
-                                    <input type="text" id = "addComment" name = "comment" placeholder = "Comment post"> 
-                                    <input type="submit" class = "postBt" name = "commentBt" value = "Add Comment">
-                                </form>
-                            </div>
-                        </div>
-                        <div class="userPost">
-                            <?php foreach($commentInfo as $cI){
-                                if($cI['post_id'] == $pI['post_id']){?>
-                                    <div class="post">
-                                        <div class="user">
-                                            <b><?php echo($cI['username'])?></b>
-                                            <span class = "time"><?php echo($cI['createdOn'])?></span>
-                                        </div>
-                                        <div class = "userPost">
-                                            <?php echo($cI['text_'])?>
-                                        </div>
-                                    </div>
-                                <?php }?>
-                            <?php }?>
-                        </div> 
-                    </div> 
-                <?php }?>
-            </div>
-        </div>
+            <div>
+            <form action="action_comment">
+                <label for="comment">Write a comment</label>
+                <br>
+                <input type="text" name="comment">  
+                <input type="submit" value = "Comment">
+            </form>
+            <div>   
+        </fieldset>     
+    </div>
     </body>
 </html>
