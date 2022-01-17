@@ -5,7 +5,6 @@
     include('footer_tpl.php');
     require('../database/supportInfo.php');  
 ?>
-
 <html>  
 <body>
     <div>
@@ -20,7 +19,7 @@
                 </p>    
             </div>   
             <div>
-                <img class="supportImg" src="../images/sos-voz-amiga.png" alt="Support Lines" height= "360" width="320">   
+                <img class="supportImg" src="../images/sos-voz-amiga.png" alt="Support Lines" height= "360" width="320">        
             </div>
         </div>
         <div>
