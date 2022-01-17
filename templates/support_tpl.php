@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $_SESSION['page'] = 'org';
     include('homepageHeader_tpl.php');
     include('footer_tpl.php');
@@ -18,7 +19,7 @@
                 </p>    
             </div>   
             <div>
-                <img class="supportImg" src="../images/sos-voz-amiga.png" alt="Support Lines" height= "360" width="320">        
+                <img class="supportImg" src="../images/sos-voz-amiga.png" alt="Support Lines" height= "360" width="320">   
             </div>
         </div>
         <div>

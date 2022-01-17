@@ -57,7 +57,6 @@
                 else                                    // Health Professional Navigation Bar
                 { ?>
                     <a <?php if($_SESSION['page'] == 'patientList'){ ?> class = "active" <?php } ?> href = "../tos.html">Patient List</a>
-                    <a href = "../tos.html">??</a>
                 <?php ; }
             }
 

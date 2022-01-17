@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $_SESSION['page'] = 'forum';
     include('homepageHeader_tpl.php');
     include('footer_tpl.php');
