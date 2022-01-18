@@ -5,6 +5,15 @@
     require('../database/supportInfo.php');  
 ?>
 <html>
+
+    <!-- Page Information and Style -->
+    <head>
+        <meta charset = "utf-8">
+        <title>Mood Coach | Support Lines</title>
+        <meta name = "viewport"
+        content = "width=device-width, initial-scale=1">
+    </head>
+
     <body>
        <div>
         <h2 class = "page_title" > Support and Organizations> Support Lines</h2>
@@ -23,6 +32,4 @@
         </ul>  
     </div> 
     </body>   
-</html>  
-    
-   
+</html>

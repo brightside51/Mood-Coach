@@ -17,10 +17,8 @@
         <meta name = "viewport"
         content = "width=device-width, initial-scale=1">
         
-        <!-- CSS Styling -->
-        <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
-        <link rel = "stylesheet" type = "text/css" href = "../css/general_style.css">
-        <link rel = "stylesheet" type = "text/css" href = "../css/form_style.css">
+        <!-- CSS Style -->
+        <link rel = "stylesheet" type = "text/css" href = "../css/styleSheet.css">
 
     </head>
 
